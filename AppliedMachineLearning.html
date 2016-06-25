@@ -1,0 +1,471 @@
+<!doctype html>
+<!-- 
+view-source:http://impress.github.io/impress.js/
+https://raw.githubusercontent.com/impress/impress.js/master/css/impress-demo.css
+
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Let The Computer Have A Go: Applied Machine Learning</title>
+    <meta name="author" content="Inon Sharony" />
+    <meta name="description" content="Practical application of data science and machine learning, beyond basic theory." />
+    <link href="stylesheet/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="impress">
+        <div id="cover" class="step slide">
+            <p>Let The Computer Have A Go:</p>
+            <p>Applied Machine Learning</p>
+            <p>Inon Sharony</p>
+            <p>June 2016</p>
+        </div>
+        <div id="intro" class="step slide" data-x="1000">
+            <ul class="inline-task-list" data-inline-tasks-content-id="28999683">
+                <li data-inline-task-id="1">
+                    <p><a class="confluence-userlink user-mention current-user-mention" data-username="Inon" href="/wiki/display/~Inon" data-linked-resource-id="11894785" data-linked-resource-version="2" data-linked-resource-type="userinfo" data-base-url="https://youappi.atlassian.net/wiki">Inon</a> Make this ML workflow into a <a href="https://youappi.atlassian.net/wiki/display/~Inon/Applicative+Considerations#ApplicativeConsiderations-PresentationAnimations" rel="nofollow">presentation </a>(&quot;Let The Computer Have A Go: Applied machine learning&quot;)</p>
+                </li>
+            </ul>
+        </div>
+        <div id="workflow" class="step slide" data-x="2000">
+            <h1 id="ApplicativeConsiderations-Workflowforaparticularepicandfeature">Workflow for a particular epic and feature</h1>
+            <p><span class="confluence-embedded-file-wrapper conf-macro output-inline" data-hasbody="false" data-macro-name="view-file"><a class="confluence-embedded-file" href="/wiki/download/attachments/28999683/Applied_Data_Science_Presented_by_Yhat.pdf?version=1&amp;modificationDate=1466594431009&amp;api=v2" data-nice-type="PDF Document" data-file-src="/wiki/download/attachments/28999683/Applied_Data_Science_Presented_by_Yhat.pdf?version=1&amp;modificationDate=1466594431009&amp;api=v2" data-linked-resource-id="43417606" data-linked-resource-type="attachment" data-linked-resource-container-id="28999683" data-linked-resource-default-alias="Applied_Data_Science_Presented_by_Yhat.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1"><img src="/wiki/rest/documentConversion/latest/conversion/thumbnail/43417606/1" height="250" /></a></span></p>
+        </div>
+        <div id="sprint" class="step slide" data-x="3000">
+            <h2 id="ApplicativeConsiderations-Sprint">Sprint</h2>
+            <div class="table-wrap">
+                <table class="wrapped confluenceTable">
+                    <colgroup>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th colspan="1" class="confluenceTh">Week</th>
+                            <th class="confluenceTh">Sun</th>
+                            <th class="confluenceTh">Mon</th>
+                            <th class="confluenceTh">Tue</th>
+                            <th class="confluenceTh">Wed</th>
+                            <th class="confluenceTh">Thu</th>
+                        </tr>
+                        <tr>
+                            <th colspan="1" class="confluenceTh">1</th>
+                            <td class="confluenceTd">Release version</td>
+                            <td class="confluenceTd">Release hotfix</td>
+                            <td class="confluenceTd">Requirements kick-off and specs</td>
+                            <td class="confluenceTd">Research</td>
+                            <td class="confluenceTd"><span>Research</span></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" class="confluenceTh">2</th>
+                            <td class="confluenceTd">Development</td>
+                            <td class="confluenceTd"><span>Development</span></td>
+                            <td class="confluenceTd"><span>Development</span></td>
+                            <td class="confluenceTd"><span>Development</span></td>
+                            <td class="confluenceTd"><span>Development</span></td>
+                        </tr>
+                        <tr>
+                            <th colspan="1" class="confluenceTh">3</th>
+                            <td class="confluenceTd">Test (QA)</td>
+                            <td class="confluenceTd"><span><span>Test (QA)</span></span>
+                            </td>
+                            <td class="confluenceTd"><span>Acceptance testing</span></td>
+                            <td class="confluenceTd"><span>Test (STG)</span></td>
+                            <td class="confluenceTd"><span>Test (STG)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p> </p>
+        </div>
+        <div id="poc" class="step slide" data-x="4000">
+            <h2 id="ApplicativeConsiderations-ProofOfConcept">Proof Of Concept</h2>
+        </div>
+        <div id="business_domain" class="step slide" data-x=4000 data-y=1000>
+            <li><u>Business domain</u>
+                <ol>
+                    <li>Value proposition (hypothesis). See <a href="https://youappi.atlassian.net/wiki/display/~Inon/Data+Driven+Value#DataDrivenValue-CounterFactualEvaluation" rel="nofollow">Counter Factual Evaluation</a>.</li>
+                    <li>Domain model</li>
+                    <li>Minimally Viable Product (MVP) requirements → KPIs → scoring &amp; test method (<a href="https://en.wikipedia.org/wiki/Confusion_matrix" class="external-link" rel="nofollow">overall performance</a> &amp; particularly important cases)</li>
+                </ol>
+            </li>
+        </div>
+        <div id="data_domain" class="step slide" data-x=4000 data-y=2000>
+            <li><a href="https://youappi.atlassian.net/wiki/display/~Inon/Appendix#Appendix-DataWrangling" rel="nofollow"><u>Data domain</u></a>
+                <ol>
+                    <li>Identification of (possibly) relevant data sources</li>
+                    <li>Fusion of raw data-sources (e.g. aggregation)</li>
+                    <li><a href="http://www.itl.nist.gov/div898/handbook/index.htm" class="external-link" rel="nofollow">Data model</a></li>
+                    <li>Data visualization and exploration</li>
+                    <li>Data cleansing</li>
+                </ol>
+            </li>
+        </div>
+        <div id="algo_domain" class="step slide" data-x=4000 data-y=3000>
+            <ol>
+                <li><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow"><u>Algorithm domain</u></a>
+                    <ol>
+                        <li><a href="https://youappi.atlassian.net/wiki/display/~Inon/Appendix#Appendix-FeatureEngineering" rel="nofollow">Feature* engineering</a></li>
+                        <li>Auxiliary models (e.g. effect of time elapsed from feature sampling until target sampling, or prediction).</li>
+                        <li>Choice of learning model and algorithm:
+                            <ol>
+                                <li>Model
+                                    <br/>
+                                    <ol>
+                                        <li>Supervised vs. unsupervised (i.e. quantity and quality of labeled data)</li>
+                                        <li>Parametric vs. non-parametric</li>
+                                        <li>Discriminative (predictive) vs. Generative (causal)</li>
+                                        <li>Accommodate or ignore feature interactions</li>
+                                    </ol>
+                                </li>
+                                <li>Optimization algorithm
+                                    <ol>
+                                        <li>Iterative vs. variational optimization (i.e. on-line or off-line)</li>
+                                        <li>Non-parallel vs. Parallel/Distributed (find some separability)
+                                            <br/>
+                                            <ol>
+                                                <li><a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Stochastic_approximation" class="external-link" rel="nofollow">Stochastic Approximation</a></li>
+                                                <li><a href="https://en.wikipedia.org/wiki/Metaheuristic#Parallel_metaheuristics" class="external-link" rel="nofollow">metaheuristics</a></li>
+                                                <li>Methods to split the cost function, and then optimize (e.g. <a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Augmented_Lagrangian_method#Alternating_direction_method_of_multipliers" class="external-link" rel="nofollow">ADMM</a>)</li>
+                                                <li>GPGPU</li>
+                                            </ol>
+                                        </li>
+                                        <li>Consider solving the <a href="https://en.wikipedia.org/wiki/Duality_(optimization)" class="external-link" rel="nofollow">dual problem</a>
+                                            <ol>
+                                                <li>Dual SVM problem</li>
+                                                <li>Matrix Factorization using ALS (particularly where the inverse problem is also of interest, such as in Recommender Systems)</li>
+                                                <li>Projection to Latent Structures (PLS)</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>Model complexity vs. feature complexity. Implications (respectively):
+                                    <br/>
+                                    <ol>
+                                        <li>Long learn time vs. long predict time</li>
+                                        <li>Predictive power is sealed at learn-time vs. predict-time</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div id="algo_example" class="step slide" data-x=4000 data-y=4000>
+            <p>e.g. Supervised, parametric, generative, non-interacting, simple model, using an iterative algorithm: <a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function" class="external-link" rel="nofollow">GLMs</a> using Stochastic Gradient Descent.</p>
+            <p>* 'Feature' in the data science sense, not the software development sense.</p>
+        </div>
+        <div id="escalation" class="step slide" data-x="5000">
+            <h2 id="ApplicativeConsiderations-Escalation">Escalation</h2>
+            <ol>
+                <li><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow"><u>Algorithm domain</u></a>
+                    <br/>
+                    <ol>
+                        <li><a href="http://www.scholarpedia.org/article/Metalearning" class="external-link" rel="nofollow">Meta-learning</a>
+                            <br/>
+                            <ol>
+                                <li><a href="http://www.scholarpedia.org/article/Ensemble_learning" class="external-link" rel="nofollow">Ensemble learning</a>
+                                    <br/>
+                                    <ol>
+                                        <li>Re-sampling: Deterministic (jackknifing) vs. stochastic (bagging)</li>
+                                        <li>Boosting (e.g. AdaBoost, XGBoost)</li>
+                                    </ol>
+                                </li>
+                                <li>Self-modification:
+                                    <ol>
+                                        <li>Epochs</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Model validation &amp; selection
+                            <ol>
+                                <li>Cross-validation</li>
+                                <li>Information Criteria</li>
+                                <li>Confusion Matrix</li>
+                                <li>AUC</li>
+                                <li>A/B user testing: alpha, beta, production</li>
+                            </ol>
+                        </li>
+                        <li><a href="#ApplicativeConsiderations-mldebug">Diagnostics &amp; debugging</a></li>
+                    </ol>
+                </li>
+                <li><u>Software development domain</u>
+                    <ol>
+                        <li> Product integration
+                            <ol>
+                                <li>Interface: In-database, API, REST, dashboard, ...</li>
+                                <li>Data pipeline DAG
+                                    <ol>
+                                        <li>Edges:
+                                            <ol>
+                                                <li>Interface: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
+                                                </li>
+                                                <li>Implementation: Functors (function reference plus state, e.g. Java method reference)</li>
+                                            </ol>
+                                        </li>
+                                        <li>Vertices:
+                                            <ol>
+                                                <li>Spouts: Data sources</li>
+                                                <li>Bolts: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Scalability, including parallelization (e.g. submit micro-batches for prediction, rather than single events).</li>
+                        <li>Test plan</li>
+                        <li>Configuration management (input parameters, including hyper-parameters)
+                            <ol>
+                                <li>Model ID</li>
+                                <li>Model description</li>
+                                <li>Model parameters</li>
+                                <li>Datetime in-force</li>
+                            </ol>
+                        </li>
+                        <li>Continuous QA: Monitor for performance degradation</li>
+                        <li>Persist historical results (and parameters used to get them, if practical. If not, store the historic models as serialized objects).
+                            <ol>
+                                <li>DB
+                                    <br/>
+                                    <ol>
+                                        <li>Timestamp</li>
+                                        <li>Model ID</li>
+                                        <li>Source code version</li>
+                                        <li>Input</li>
+                                        <li>Output</li>
+                                    </ol>
+                                </li>
+                                <li>Logs (e.g. for performance analysis)</li>
+                                <li>Debug plots</li>
+                            </ol>
+                        </li>
+                        <li>Documentation</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div id="data_wrangling" class="step slide" data-x="6000">
+            <h1 id="ApplicativeConsiderations-DataWranglingDataWrangling"><span class="confluence-anchor-link conf-macro output-inline" id="ApplicativeConsiderations-DataWrangling" data-hasbody="false" data-macro-name="anchor"> </span>Data Wrangling</h1>
+        </div>
+        <div id="objectives" class="step slide" data-x="7000">
+            <h2 style="text-align: justify;" id="ApplicativeConsiderations-Objectives">Objectives</h2>
+            <ul style="margin-left: 2.0em;">
+                <li>No <em>missing</em> values (null / None, undefined / N/A, ...)</li>
+                <li>No <em>invalid</em> values (NaN, inf, ' ', ...)</li>
+                <li>No <em>duplicate</em> samples</li>
+                <li><em>Enumerable</em> values only (enum, int, or float / double; e.g. no str / object)</li>
+                <li><em>Normalized</em> values (each enumerable feature should have values symmetric about the origin, i.e. with zero mean, and unit standard deviation)</li>
+                <li><em>Feature engineering</em> (domain logic + intuition =&gt; hypotheses. Since some compound features will derive the greatest contribution, this will usually be followed with some dimensionality reduction)</li>
+            </ul>
+            <div class="confluence-information-macro confluence-information-macro-warning conf-macro output-block" data-hasbody="true" data-macro-name="warning">
+                <p class="title">Rational design</p><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"> </span>
+                <div class="confluence-information-macro-body">Caveat! Every data processing decision will probably affect the model's predictive performance.</div>
+            </div>
+        </div>
+        <div id="procedure" class="step slide" data-x="8000">
+            <h2 style="text-align: justify;" id="ApplicativeConsiderations-Procedure">Procedure</h2>
+            <ol style="margin-left: 2.0em;">
+                <li>Overview data schema
+                    <br/>
+                    <ol>
+                        <li><a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html" class="external-link" rel="nofollow">pandas.DataFrame.describe</a></li>
+                        <li><a href="https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.DataFrame" class="external-link" rel="nofollow">spark.DataFrame.describe</a></li>
+                    </ol>
+                </li>
+                <li>Identify any <em>dimensionality</em> issues and perform Dimensionality Reduction
+                    <br/>
+                    <ol>
+                        <li>Record linkage</li>
+                        <li>Database normalization</li>
+                        <li>Reshape matrices to standard shape</li>
+                        <li>Sparse matrices</li>
+                        <li>Interactions: MANOVA, cross-correlations (also auto-correlations in the case of time-series data)</li>
+                    </ol>
+                </li>
+                <li>Cleanse features with missing, invalid, innumerable, or un-normalized values:
+                    <ol style="margin-left: 2.0em;">
+                        <li><u>Missing</u>: Drop (<em>filter</em>) or <em>fill</em> (imputation)?
+                            <ol>
+                                <li>If filling in, what with? zero-order = most probable (mode), more complex logic...</li>
+                                <li>Consider using a CART model.</li>
+                                <li>Selection bias: Find ways to compensate for data which was not measured, in order to take the base rate into account.</li>
+                            </ol>
+                        </li>
+                        <li><u>Invalid</u>: Manipulate (<em>transform</em>) or <em>replace</em>?</li>
+                        <li><u>Duplicate</u>: Merge duplicate (or near-duplicate) samples, and compensate by introducing a double weight for the effect of the merged sample on the model.</li>
+                        <li>Is <em>enumeration </em>viable?
+                            <br/>
+                            <ol>
+                                <li><em>Hashing trick</em> (i.e. feature vectorization)</li>
+                                <li>e.g. spark.ml.feature.StringIndexer, Tokenizer, HashingTF, etc.</li>
+                            </ol>
+                        </li>
+                        <li><u>Normalization</u>:
+                            <br/>
+                            <ol>
+                                <li>Tolerance of outliers
+                                    <ol>
+                                        <li>Censoring (<em>filter</em>) or truncating (<em>imputation</em>) of outliers</li>
+                                        <li>Choice of location statistic: average vs. median</li>
+                                        <li>Including a variability statistic (e.g. range, variance)</li>
+                                        <li>Binning of variables whose dynamic-range is large</li>
+                                    </ol>
+                                </li>
+                                <li>Mathematical transformations to attain zero mean and uniform (~ unit) variance
+                                    <ol>
+                                        <li>Logarithmic transformations (log, semilog, log-log).</li>
+                                        <li><span style="color: rgb(37,37,37);">Box–Cox (Power) Transformation</span></li>
+                                    </ol>
+                                </li>
+                                <li>DB normalization:
+                                    <ol>
+                                        <li>Decomposition of composite data into multiple, primitive typed fields</li>
+                                        <li>Aggregation of identical observations using 'sum'/'count' fields.</li>
+                                        <li>
+                                            <p class="ChapterTitle" lang="en">Propositionalization.</p>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>Feature selection
+                    <br/>
+                    <ol>
+                        <li>Consider <em>removing noisy features</em> (e.g. mostly missing or unreliable for any other reason), to attempt more concise models first.</li>
+                        <li>Add <em>compound features</em>, if warranted, including the <em>kernel trick</em></li>
+                    </ol>
+                </li>
+                <li>
+                    <p><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional* weight when fitting.
+                        <br/>* Proportional to their original fraction in the sample set.</p>
+                </li>
+                <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
+                <li><u>Data contamination/leakage</u>:
+                    <ol>
+                        <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
+                        <li><u>Problem</u>: Some feature A, highly correlates with the target variable, but offers little predictive power (correlation vs. causation).</li>
+                        <li><u>Solution</u>:
+                            <ol>
+                                <li>Introduce more feature/s which have low correlation with A, or drop A altogether.</li>
+                                <li>Consider keeping features even if they have low correlation with the target variable, directly.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            <ul>
+                <li>It can be useful to add new data columns for the cleansed and compounded data, rather than overwriting the original columns.</li>
+                <li>The various cleansing and compounding stages can be programmed to execute sequentially, as part of an, e.g. spark.ml.Pipeline, and followed by 'train/fit' and 'test/score' phases.</li>
+            </ul>
+        </div>
+        <div id="extract_date_and_time" class="step slide" data-x="9000">
+            <h3 id="ApplicativeConsiderations-Example:ExtractDate&amp;Timebychronofields">Example: Extract Date &amp; Time by chrono fields</h3>
+            <ol>
+                <li><u>Normalized fields:</u>
+                    <ol>
+                        <li>Century (zero-based): e.g. 20 for 20XX</li>
+                        <li>Year in century: 00-99</li>
+                        <li>Month of year: 1-12</li>
+                        <li>Day of month: 1-31</li>
+                        <li>Hour of day: 00-23</li>
+                        <li>Minute of hour: 00-59</li>
+                        <li>Second of minute: 00-59</li>
+                        <li>Milli of second: 000-999</li>
+                    </ol>
+                </li>
+                <li><u>Derived informative fields:</u>
+                    <br/>
+                    <ol>
+                        <li>Season of year: S/F/W/S</li>
+                        <li>Week of year: 1-52</li>
+                        <li>Week of month: 1-5</li>
+                        <li>Day of year: 1-366</li>
+                        <li>Day of week: 1-7</li>
+                        <li>Is weekend? True/False</li>
+                        <li>Is daytime? True/False</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div id="feature_engineering" class="step slide" data-x="10000">
+            <h1 id="ApplicativeConsiderations-FeatureEngineeringFeatureengineeringapproaches"><span class="confluence-anchor-link conf-macro output-inline" id="ApplicativeConsiderations-FeatureEngineering" data-hasbody="false" data-macro-name="anchor"> </span>Feature engineering approaches</h1>
+            <ol>
+                <li><u>Manual</u>:
+                    <ol>
+                        <li>extraction → selection → reduction</li>
+                        <li>regularization</li>
+                    </ol>
+                </li>
+                <li><u>Learning</u>:
+                    <ol>
+                        <li>Structured data:
+                            <ol>
+                                <li>Neglecting interactions: Factorization of the design matrix</li>
+                                <li>Include interactions: Pruned decision trees</li>
+                                <li>cluster analysis</li>
+                            </ol>
+                        </li>
+                        <li>Unstructured* data:
+                            <ol>
+                                <li>artificial neural network</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            <p>* Examples of unstructured data most amenable to ANNs:</p>
+            <ol>
+                <li>NLP</li>
+                <li>media
+                    <ol>
+                        <li>audio</li>
+                        <li>images</li>
+                        <li>video</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div id="diagnostics_and_debugging" class="step slide" data-x="11000">
+            <h1 id="ApplicativeConsiderations-mldebugDiagnostics&amp;debugging"><span class="confluence-anchor-link conf-macro output-inline" id="ApplicativeConsiderations-mldebug" data-hasbody="false" data-macro-name="anchor"> </span>Diagnostics &amp; debugging</h1>
+            <p><span class="confluence-embedded-file-wrapper conf-macro output-inline" data-hasbody="false" data-macro-name="view-file"><a class="confluence-embedded-file" href="/wiki/download/attachments/28999683/ML-advice.pdf?version=1&amp;modificationDate=1465295252212&amp;api=v2" data-nice-type="PDF Document" data-file-src="/wiki/download/attachments/28999683/ML-advice.pdf?version=1&amp;modificationDate=1465295252212&amp;api=v2" data-linked-resource-id="40370192" data-linked-resource-type="attachment" data-linked-resource-container-id="28999683" data-linked-resource-default-alias="ML-advice.pdf" data-mime-type="application/pdf" data-has-thumbnail="true" data-linked-resource-version="1"><img src="/wiki/rest/documentConversion/latest/conversion/thumbnail/40370192/1" height="250" /></a></span></p>
+        </div>
+        <div id="communicating_results" class="step slide" data-x="12000">
+            <h1 id="ApplicativeConsiderations-Communicatingresults">Communicating results</h1>
+        </div>
+        <div id="presentation_animations" class="step slide" data-x="13000">
+            <h2 id="ApplicativeConsiderations-PresentationAnimationsPresentationanimations"><span class="confluence-anchor-link conf-macro output-inline" id="ApplicativeConsiderations-PresentationAnimations" data-hasbody="false" data-macro-name="anchor"> </span>Presentation animations</h2>
+            <ul class="inline-task-list" data-inline-tasks-content-id="28999683">
+                <li style="background-image: none;">
+                    <ol>
+                        <li>
+                            <p>overview &amp; each top-level step as a separate module</p>
+                        </li>
+                        <li>zoom in on each module, while keeping overall perspective</li>
+                        <li>non-linear flows: e.g. cycles (feedback loops)</li>
+                        <li>consider orientation: go from top-down, top-left to bottom-right, left-to-right, outside-in, etc.</li>
+                        <li>use non-default font, attractive 3D graphics, toned-down colors, and toned-down photos/clipart/icons (only where appropriate beyond doubt)</li>
+                        <li>hyperlink from each module slide to it's composing modules, and back up to the level above it</li>
+                        <li>use animated transitions to create a sense of motion (but avoid motion-sickness). For example, <a href="http://strut.io/editor/" class="external-link" rel="nofollow">strut.io</a>.</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/impress.js"></script>
+    <script>
+    impress().init();
+    </script>
+</body>
+
+</html>
