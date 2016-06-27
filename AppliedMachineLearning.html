@@ -9,7 +9,7 @@
     <link href="stylesheets/impress.css" rel="stylesheet" />
 </head>
 
-<body>
+<body background="images/watermark.png">
     <div id="impress">
         <div id="cover" class="step slide">
             <p style="text-align: center; font-size: 72">Let The Computer Have A Go:
@@ -330,37 +330,34 @@
                 </ol>
             </li>
         </div>
-        <div id="normalization" class="step slide" data-x=18000 data-y=3000>
-            <li><u>Normalization</u>:
-                <br/>
-                <ol>
-                    <li>Tolerance of outliers
-                        <ol>
-                            <li>Censoring (<em>filter</em>) or truncating (<em>imputation</em>) of outliers</li>
-                            <li>Choice of location statistic: average vs. median</li>
-                            <li>Including a variability statistic (e.g. range, variance)</li>
-                            <li>Binning of variables whose dynamic-range is large</li>
-                        </ol>
-                    </li>
-                    <li>Mathematical transformations to attain zero mean and uniform (~ unit) variance
-                        <ol>
-                            <li>Logarithmic transformations (log, semilog, log-log).</li>
-                            <li><span style="color: rgb(37,37,37);">Box–Cox (Power) Transformation</span></li>
-                        </ol>
-                    </li>
-                    <li>DB normalization:
-                        <ol>
-                            <li>Decomposition of composite data into multiple, primitive typed fields</li>
-                            <li>Aggregation of identical observations using 'sum'/'count' fields.</li>
-                            <li>
-                                <p class="ChapterTitle" lang="en">Propositionalization.</p>
-                            </li>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
+        <div id="value_normalization" class="step slide" data-x=18000 data-y=3000>
+            <h2>Value Normalization</h2>
+            <ol>
+                <li>Tolerance of outliers
+                    <ol>
+                        <li>Censoring (<em>filter</em>) or truncating (<em>imputation</em>) of outliers</li>
+                        <li>Choice of location statistic: average vs. median</li>
+                        <li>Including a variability statistic (e.g. range, variance)</li>
+                        <li>Binning of variables whose dynamic-range is large</li>
+                    </ol>
+                </li>
+                <li>Mathematical transformations to attain zero mean and uniform (~ unit) variance
+                    <ol>
+                        <li>Logarithmic transformations (log, semilog, log-log).</li>
+                        <li><span style="color: rgb(37,37,37);">Box–Cox (Power) Transformation</span></li>
+                    </ol>
+                </li>
+            </ol>
         </div>
-        <div id="feature_selection" class="step slide" data-x=18000 data-y=4000>
+        <div id="db_normalization" class="step slide" data-x=18000 data-y=4000>
+            <h2>DB Normalization</h2>
+            <ol>
+                <li>Decomposition of composite data into multiple, primitive typed fields</li>
+                <li>Aggregation of identical observations using 'sum'/'count' fields.</li>
+                <li>Propositionalization: RDB Feature Synthesis (e.g. Deep Feature Synthesis)</li>
+            </ol>
+        </div>
+        <div id="feature_selection" class="step slide" data-x=18000 data-y=5000>
             <li>Feature selection
                 <br/>
                 <ol>
@@ -369,14 +366,14 @@
                 </ol>
             </li>
         </div>
-        <div id="randomization" class="step slide" data-x=18000 data-y=5000>
+        <div id="randomization" class="step slide" data-x=18000 data-y=6000>
             <li>
                 <p><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional* weight when fitting.
                     <br/>* Proportional to their original fraction in the sample set.</p>
             </li>
             <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
         </div>
-        <div id="data_leakage" class="step slide" data-x=18000 data-y=6000>
+        <div id="data_leakage" class="step slide" data-x=18000 data-y=7000>
             <li><u>Data contamination/leakage</u>:
                 <ol>
                     <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
@@ -390,7 +387,7 @@
                 </ol>
             </li>
         </div>
-        <div id="data_tips" class="step slide" data-x=18000 data-y=7000>
+        <div id="data_tips" class="step slide" data-x=18000 data-y=8000>
             <ul>
                 <li>The various cleansing and compounding stages can be programmed to execute sequentially, as part of an, e.g. spark.ml.Pipeline, and followed by 'train/fit' and 'test/score' phases.</li>
             </ul>
@@ -477,45 +474,42 @@
         <div id="communicating_results" class="step slide" data-x=26000>
             <h1 id="Communicatingresults ">Communicating results</h1>
         </div>
-        <div id="presentation_animations " class="step slide" data-x=28000>
+        <div id="presentation_animations" class="step slide" data-x=28000>
             <h2 id="PresentationAnimationsPresentationanimations ">Presentation animations</h2>
+            <ol>
+                <li>overview &amp; each top-level step as a separate module</li>
+                <li>zoom in on each module, while keeping overall perspective</li>
+                <li>non-linear flows: e.g. cycles (feedback loops)</li>
+                <li>consider orientation: go from top-down, top-left to bottom-right, left-to-right, outside-in, etc.</li>
+                <li>use non-default font, attractive 3D graphics, toned-down colors, and toned-down photos/clipart/icons (only where appropriate beyond doubt)</li>
+                <li>hyperlink from each module slide to it's composing modules, and back up to the level above it</li>
+                <li>use animated transitions to create a sense of motion (but avoid motion-sickness). For example, <a href="http://strut.io/editor/ " class="external-link " rel="nofollow ">strut.io</a>.</li>
+            </ol>
+        </div>
+        <div id="impressjs" class="step slide " data-x=28000 data-y=1000>
+            <h2>impress.js</h2>
             <ul>
-                <li ">
-                <ol>
-                    <li>
-                        <p>overview &amp; each top-level step as a separate module</p>
-                    </li>
-                    <li>zoom in on each module, while keeping overall perspective</li>
-                    <li>non-linear flows: e.g. cycles (feedback loops)</li>
-                    <li>consider orientation: go from top-down, top-left to bottom-right, left-to-right, outside-in, etc.</li>
-                    <li>use non-default font, attractive 3D graphics, toned-down colors, and toned-down photos/clipart/icons (only where appropriate beyond doubt)</li>
-                    <li>hyperlink from each module slide to it's composing modules, and back up to the level above it</li>
-                    <li>use animated transitions to create a sense of motion (but avoid motion-sickness). For example, <a href="http://strut.io/editor/ " class="external-link " rel="nofollow ">strut.io</a>.</li>
-                </ol>
+                <li>Use the source!
+                    <ul>
+                        <li><a href="view-source:http://impress.github.io/impress.js/ ">impress.js</a></li>
+                        <li><a href="https://raw.githubusercontent.com/impress/impress.js/master/css/impress-demo.css ">demo stylesheet (CSS)</a></li>
+                    </ul>
                 </li>
-                <li>impress.js
-                    <li>Use the source!
-                        <ul>
-                            <li><a href="view-source:http://impress.github.io/impress.js/ ">impress.js</a></li>
-                            <li><a href="https://raw.githubusercontent.com/impress/impress.js/master/css/impress-demo.css ">demo stylesheet (CSS)</a></li>
-                        </ul>
-                    </li>
-                    <li>Editors
-                        <ol>
-                            <li>Markdown: <a href="http://slideshow-templates.github.io/slideshow-impress.js/slides.html ">Slideshow (impress.js template)</a></li>
-                            <li>reStructuredText: <a href="http://regebro.github.io/hovercraft ">Hovercraft!</a></li>
-                            <li>GUI: <a href="http://strut.io/editor ">Strut.io</a></li>
-                        </ol>
-                    </li>
+                <li>Editors
+                    <ol>
+                        <li>Markdown: <a href="http://slideshow-templates.github.io/slideshow-impress.js/slides.html ">Slideshow (impress.js template)</a></li>
+                        <li>reStructuredText: <a href="http://regebro.github.io/hovercraft ">Hovercraft!</a></li>
+                        <li>GUI: <a href="http://strut.io/editor ">Strut.io</a></li>
+                    </ol>
                 </li>
-                </ul>
+            </ul>
         </div>
         <div id="overview " class="step " data-scale="10 "></div>
     </div>
     <script src="js/impress.js "></script>
     <script>
-impress().init();
-</script>
+    impress().init();
+    </script>
 </body>
 
 </html>
