@@ -17,14 +17,14 @@
             <p style="text-align: center; vertical-align: middle">Inon Sharony</p>
             <p style="text-align: center; vertical-align: bottom">June 2016</p>
         </div>
-        <div id="intro" class="step slide" data-x="2000">
+        <div id="intro" class="step slide" data-x=2000>
             Intorduction
         </div>
-        <div id="workflow" class="step slide" data-x="4000">
+        <div id="workflow" class="step slide" data-x=4000>
             <h1 id="Workflowforaparticularepicandfeature">Workflow for a particular epic and feature</h1>
             <object data="images/Applied_Data_Science_Presented_by_Yhat.pdf" width="640" height="480">Applied Data Science (Y-hat)</object>
         </div>
-        <div id="sprint" class="step slide" data-x="6000">
+        <div id="sprint" class="step slide" data-x=6000>
             <h2 id="Sprint">Sprint</h2>
             <div class="table-wrap">
                 <table style="max-width: 640px">
@@ -75,7 +75,7 @@
             </div>
             <p> </p>
         </div>
-        <div id="poc" class="step slide" data-x="8000">
+        <div id="poc" class="step slide" data-x=8000>
             <h2 id="ProofOfConcept" align="center" style="text-align: center; vertical-align: middle">Proof Of Concept</h2>
         </div>
         <div id="business_domain" class="step slide" data-x=8000 data-y=1000>
@@ -162,7 +162,7 @@
             <p>e.g. Supervised, parametric, generative, non-interacting, simple model, using an iterative algorithm: <a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function" class="external-link" rel="nofollow">GLMs</a> using Stochastic Gradient Descent.</p>
             <p>* 'Feature' in the data science sense, not the software development sense.</p>
         </div>
-        <div id="escalation" class="step slide" data-x="10000">
+        <div id="escalation" class="step slide" data-x=10000>
             <h2 id="Escalation" align="center" style="text-align: center; vertical-align: middle">Escalation</h2>
             <ol>
                 <li><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow"><u>Algorithm domain</u></a>
@@ -243,7 +243,7 @@
                     <li>Model parameters</li>
                     <li>Datetime in-force</li>
                 </ol>
-            </li>            
+            </li>
             <li>Continuous QA: Monitor for performance degradation</li>
             <li>Persist historical results (and parameters used to get them, if practical. If not, store the historic models as serialized objects).
             </li>
@@ -268,10 +268,10 @@
                 </li>
             </ol>
         </div>
-        <div id="data_wrangling" class="step slide" data-x="14000">
+        <div id="data_wrangling" class="step slide" data-x=14000>
             <h1 id="DataWrangling" align="center" style="text-align: center; vertical-align: middle">Data Wrangling</h1>
         </div>
-        <div id="objectives" class="step slide" data-x="16000">
+        <div id="objectives" class="step slide" data-x=16000>
             <h2 style="text-align: justify;" id="Objectives">Objectives</h2>
             <ul style="margin-left: 2.0em;">
                 <li>No <em>missing</em> values (null / None, undefined / N/A, ...)</li>
@@ -283,7 +283,7 @@
             </ul>
             Rational design: Caveat! Every data processing decision will probably affect the model's predictive performance.
         </div>
-        <div id="procedure" class="step slide" data-x="18000">
+        <div id="procedure" class="step slide" data-x=18000>
             <h2 style="text-align: justify;" id="Procedure">Procedure</h2>
             <ol style="margin-left: 2.0em;">
                 <li>Overview data schema
@@ -303,88 +303,102 @@
                         <li>Interactions: MANOVA, cross-correlations (also auto-correlations in the case of time-series data)</li>
                     </ol>
                 </li>
-                <li>Cleanse features with missing, invalid, innumerable, or un-normalized values:
-                    <ol style="margin-left: 2.0em;">
-                        <li><u>Missing</u>: Drop (<em>filter</em>) or <em>fill</em> (imputation)?
-                            <ol>
-                                <li>If filling in, what with? zero-order = most probable (mode), more complex logic...</li>
-                                <li>Consider using a CART model.</li>
-                                <li>Selection bias: Find ways to compensate for data which was not measured, in order to take the base rate into account.</li>
-                            </ol>
-                        </li>
-                        <li><u>Invalid</u>: Manipulate (<em>transform</em>) or <em>replace</em>?</li>
-                        <li><u>Duplicate</u>: Merge duplicate (or near-duplicate) samples, and compensate by introducing a double weight for the effect of the merged sample on the model.</li>
-                        <li>Is <em>enumeration </em>viable?
-                            <br/>
-                            <ol>
-                                <li><em>Hashing trick</em> (i.e. feature vectorization)</li>
-                                <li>e.g. spark.ml.feature.StringIndexer, Tokenizer, HashingTF, etc.</li>
-                            </ol>
-                        </li>
-                        <li><u>Normalization</u>:
-                            <br/>
-                            <ol>
-                                <li>Tolerance of outliers
-                                    <ol>
-                                        <li>Censoring (<em>filter</em>) or truncating (<em>imputation</em>) of outliers</li>
-                                        <li>Choice of location statistic: average vs. median</li>
-                                        <li>Including a variability statistic (e.g. range, variance)</li>
-                                        <li>Binning of variables whose dynamic-range is large</li>
-                                    </ol>
-                                </li>
-                                <li>Mathematical transformations to attain zero mean and uniform (~ unit) variance
-                                    <ol>
-                                        <li>Logarithmic transformations (log, semilog, log-log).</li>
-                                        <li><span style="color: rgb(37,37,37);">Box–Cox (Power) Transformation</span></li>
-                                    </ol>
-                                </li>
-                                <li>DB normalization:
-                                    <ol>
-                                        <li>Decomposition of composite data into multiple, primitive typed fields</li>
-                                        <li>Aggregation of identical observations using 'sum'/'count' fields.</li>
-                                        <li>
-                                            <p class="ChapterTitle" lang="en">Propositionalization.</p>
-                                        </li>
-                                    </ol>
-                                </li>
-                            </ol>
-                        </li>
-                    </ol>
-                </li>
-                <li>Feature selection
-                    <br/>
-                    <ol>
-                        <li>Consider <em>removing noisy features</em> (e.g. mostly missing or unreliable for any other reason), to attempt more concise models first.</li>
-                        <li>Add <em>compound features</em>, if warranted, including the <em>kernel trick</em></li>
-                    </ol>
-                </li>
-                <li>
-                    <p><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional* weight when fitting.
-                        <br/>* Proportional to their original fraction in the sample set.</p>
-                </li>
-                <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
-                <li><u>Data contamination/leakage</u>:
-                    <ol>
-                        <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
-                        <li><u>Problem</u>: Some feature A, highly correlates with the target variable, but offers little predictive power (correlation vs. causation).</li>
-                        <li><u>Solution</u>:
-                            <ol>
-                                <li>Introduce more feature/s which have low correlation with A, or drop A altogether.</li>
-                                <li>Consider keeping features even if they have low correlation with the target variable, directly.</li>
-                            </ol>
-                        </li>
-                    </ol>
-                </li>
             </ol>
+        </div>
+        <div id="data_cleansing" class="step slide" data-x=18000 data-y=1000>
+            <li>Cleanse features with missing, invalid, innumerable, or un-normalized values:
+                <ol style="margin-left: 2.0em;">
+                    <li><u>Missing</u>: Drop (<em>filter</em>) or <em>fill</em> (imputation)?
+                        <ol>
+                            <li>If filling in, what with? zero-order = most probable (mode), more complex logic...</li>
+                            <li>Consider using a CART model.</li>
+                            <li>Selection bias: Find ways to compensate for data which was not measured, in order to take the base rate into account.</li>
+                        </ol>
+                    </li>
+                    <li><u>Invalid</u>: Manipulate (<em>transform</em>) or <em>replace</em>?</li>
+                    <li>It can be useful to add new data columns for the cleansed and compounded data, rather than overwriting the original columns.</li>
+                </ol>
+            </li>
+        </div>
+        <div id="data_cleansing2" class="step slide" data-x=18000 data-y=2000>
+            <li><u>Duplicate</u>: Merge duplicate (or near-duplicate) samples, and compensate by introducing a double weight for the effect of the merged sample on the model.</li>
+            <li>Is <em>enumeration </em>viable?
+                <br/>
+                <ol>
+                    <li><em>Hashing trick</em> (i.e. feature vectorization)</li>
+                    <li>e.g. spark.ml.feature.StringIndexer, Tokenizer, HashingTF, etc.</li>
+                </ol>
+            </li>
+        </div>
+        <div id="normalization" class="step slide" data-x=18000 data-y=3000>
+            <li><u>Normalization</u>:
+                <br/>
+                <ol>
+                    <li>Tolerance of outliers
+                        <ol>
+                            <li>Censoring (<em>filter</em>) or truncating (<em>imputation</em>) of outliers</li>
+                            <li>Choice of location statistic: average vs. median</li>
+                            <li>Including a variability statistic (e.g. range, variance)</li>
+                            <li>Binning of variables whose dynamic-range is large</li>
+                        </ol>
+                    </li>
+                    <li>Mathematical transformations to attain zero mean and uniform (~ unit) variance
+                        <ol>
+                            <li>Logarithmic transformations (log, semilog, log-log).</li>
+                            <li><span style="color: rgb(37,37,37);">Box–Cox (Power) Transformation</span></li>
+                        </ol>
+                    </li>
+                    <li>DB normalization:
+                        <ol>
+                            <li>Decomposition of composite data into multiple, primitive typed fields</li>
+                            <li>Aggregation of identical observations using 'sum'/'count' fields.</li>
+                            <li>
+                                <p class="ChapterTitle" lang="en">Propositionalization.</p>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </div>
+        <div id="feature_selection" class="step slide" data-x=18000 data-y=4000>
+            <li>Feature selection
+                <br/>
+                <ol>
+                    <li>Consider <em>removing noisy features</em> (e.g. mostly missing or unreliable for any other reason), to attempt more concise models first.</li>
+                    <li>Add <em>compound features</em>, if warranted, including the <em>kernel trick</em></li>
+                </ol>
+            </li>
+        </div>
+        <div id="randomization" class="step slide" data-x=18000 data-y=5000>
+            <li>
+                <p><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional* weight when fitting.
+                    <br/>* Proportional to their original fraction in the sample set.</p>
+            </li>
+            <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
+        </div>
+        <div id="data_leakage" class="step slide" data-x=18000 data-y=6000>
+            <li><u>Data contamination/leakage</u>:
+                <ol>
+                    <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
+                    <li><u>Problem</u>: Some feature A, highly correlates with the target variable, but offers little predictive power (correlation vs. causation).</li>
+                    <li><u>Solution</u>:
+                        <ol>
+                            <li>Introduce more feature/s which have low correlation with A, or drop A altogether.</li>
+                            <li>Consider keeping features even if they have low correlation with the target variable, directly.</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </div>
+        <div id="data_tips" class="step slide" data-x=18000 data-y=7000>
             <ul>
-                <li>It can be useful to add new data columns for the cleansed and compounded data, rather than overwriting the original columns.</li>
                 <li>The various cleansing and compounding stages can be programmed to execute sequentially, as part of an, e.g. spark.ml.Pipeline, and followed by 'train/fit' and 'test/score' phases.</li>
             </ul>
         </div>
-        <div id="extract_chrono" class="step slide" data-x="20000">
+        <div id="extract_chrono" class="step slide" data-x=20000>
             <h3 id="Example:ExtractDate&amp;Timebychronofields">Example: Extract Date &amp; Time by chrono fields</h3>
         </div>
-        <div id="normalized_fields" class="step slide" data-x="20000" data-y=1000>
+        <div id="normalized_fields" class="step slide" data-x=20000 data-y=1000>
             <li><u>Normalized fields:</u>
                 <ol>
                     <li>Century (zero-based): e.g. 20 for 20XX</li>
@@ -398,7 +412,7 @@
                 </ol>
             </li>
         </div>
-        <div id="derived_fields" class="step slide" data-x="20000" data-y=2000>
+        <div id="derived_fields" class="step slide" data-x=20000 data-y=2000>
             <li><u>Derived informative fields:</u>
                 <br/>
                 <ol>
@@ -412,10 +426,10 @@
                 </ol>
             </li>
         </div>
-        <div id="feature_engineering" class="step slide" data-x="22000">
+        <div id="feature_engineering" class="step slide" data-x=22000>
             <h1 id="FeatureEngineeringFeatureengineeringapproaches" align="center" style="text-align: center; vertical-align: middle">Feature engineering approaches</h1>
         </div>
-        <div id="manual-features" class="step slide" data-x="22000" data-y=1000>
+        <div id="manual-features" class="step slide" data-x=22000 data-y=1000>
             <ol>
                 <li><u>Manual</u>:
                     <ol>
@@ -425,7 +439,7 @@
                 </li>
             </ol>
         </div>
-        <div id="learned-features" class="step slide" data-x="22000" data-y=2000>
+        <div id="learned-features" class="step slide" data-x=22000 data-y=2000>
             <li><u>Learning</u>:
                 <ol>
                     <li>Structured data:
@@ -443,7 +457,7 @@
                 </ol>
             </li>
         </div>
-        <div id="unstructured_data" class="step slide" data-x="22000" data-y=3000>
+        <div id="unstructured_data" class="step slide" data-x=22000 data-y=3000>
             <p>Examples of unstructured data most amenable to ANNs:</p>
             <ol>
                 <li>NLP</li>
@@ -456,14 +470,14 @@
                 </li>
             </ol>
         </div>
-        <div id="diagnostics_and_debugging" class="step slide" data-x="24000">
+        <div id="diagnostics_and_debugging" class="step slide" data-x=24000>
             <h1 id="mldebugDiagnostics&amp;debugging">Diagnostics &amp; debugging</h1>
             <object data="images/ML-advice.pdf" width="640" height="480">ML Advice (Andrew Ng)</object>
         </div>
-        <div id=" communicating_results " class="step slide " data-x="26000 ">
+        <div id="communicating_results" class="step slide" data-x=26000>
             <h1 id="Communicatingresults ">Communicating results</h1>
         </div>
-        <div id="presentation_animations " class="step slide " data-x="28000 ">
+        <div id="presentation_animations " class="step slide" data-x=28000>
             <h2 id="PresentationAnimationsPresentationanimations ">Presentation animations</h2>
             <ul>
                 <li ">
