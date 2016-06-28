@@ -12,10 +12,10 @@
 <body background="images/watermark.png">
     <div id="impress">
         <div id="cover" class="step slide">
-            <p style="text-align: center; font-size: 72">Lessons From Applied Machine Learning</p>
+            <p style="text-align: center">After Action Review:<span style="font-size: 60px"><br>Applied Machine Learning</span></p>
             <p style="text-align: center; vertical-align: middle">Inon Sharony</p>
             <p style="text-align: center; vertical-align: bottom">June 2016</p>
-            <img src="images/aar_173airborne_bct.jpg" alt="https://www.flickr.com/photos/usarmyeurope_images/6232603158"/>
+            <img src="images/aar_173airborne_bct.jpg" alt="https://www.flickr.com/photos/usarmyeurope_images/6232603158" />
         </div>
         <div id="intro" class="step slide" data-x=2000>
             <h2>Introduction</h2>
@@ -137,7 +137,16 @@
                 </ol>
             </li>
         </div>
-        <div id="model_vs_algo_complexity" class="step slide" data-x=14000 data-y=3000>
+        <div id="regularization" class="step slide" data-x=14000 data-y=3000>
+            <h2>Regularization</h2>
+            <ul>
+                <li><em>L-1 (LASSO)</em>: Induce feature sparsity (L-0 will induce entry-wise sparsity, but is not convex)</li>
+                <li><em>L-2 (Tikhonov regularization a.k.a. ridge regression)</em>: Induce smoothness, reduce multicollinearity </li>
+                <li>Some of each (Elastic net)</li>
+            </ul>
+            The regularization term causes model parameters to shrink, in order to avoid the additional cost incurred. For small parameters, lower regularization order (L-1) will incur a higher cost than a higher order (L-2), making the effects of Regularization more dramatic: From inducing smoothness by decreasing parameter magnitude, to inducing sparsity by taking all but a few parameters to zero. See, for instance, chapter 6 of "An Introduction to Statistical Learning".
+        </div>
+        <div id="model_vs_algo_complexity" class="step slide" data-x=16000 data-y=3000>
             <li>Model complexity vs. feature complexity. Implications (respectively):
                 <br/>
                 <ol>
@@ -193,12 +202,9 @@
                 </ol>
             </li>
         </div>
-        <div id="d_and_d" class="step slide" data-x=10000 data-y=3000>
-            <li><a href="#mldebug">Diagnostics &amp; debugging</a></li>
-        </div>
         <div id="software" class="step slide" data-x=12000>
             <li><u>Software development domain</u>
-            </li><img src="images/BigPicMetadataMgmt.jpg" alt="https://www.youtube.com/watch?v=Zg9BNGV_DAg"/>
+            </li><img src="images/BigPicMetadataMgmt.jpg" alt="https://www.youtube.com/watch?v=Zg9BNGV_DAg" />
         </div>
         <div id="integration" class="step slide" data-x=12000 data-y=1000>
             <li> Product integration
@@ -497,7 +503,8 @@
                 </li>
             </ul>
         </div>
-        <div id="overview " class="step " data-scale="10 "></div>
+        <div id="overview" class="step slide" data-x=14000 data-scale=100>
+        </div>
     </div>
     <script src="js/impress.js "></script>
     <script>
