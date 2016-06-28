@@ -11,24 +11,71 @@
 
 <body background="images/watermark.png">
     <div id="impress">
-        <div id="cover" class="step slide">
-            <p style="text-align: center">After Action Review:<span style="font-size: 60px"><br>Applied Machine Learning</span></p>
-            <p style="text-align: center; vertical-align: middle">Inon Sharony</p>
-            <p style="text-align: center; vertical-align: bottom">June 2016</p>
+        <div id="cover" class="step slide" data-x=-2000>
+            <p style="text-align: center">After action review
+                <br><span style="font-size: 60px"><br>Applied Machine Learning</span></p>
+            <p style="text-align: center; vertical-align: middle"><a href="https://InonS.GitHub.IO">Inon Sharony</a>
+                <br>June 2016</p>
             <img src="images/aar_173airborne_bct.jpg" alt="https://www.flickr.com/photos/usarmyeurope_images/6232603158" />
         </div>
-        <div id="intro" class="step slide" data-x=2000>
-            <h2>Introduction</h2>
+        <div id="intro_start" class="step slide" data-x=0>
+            <p>How do I approach a data science task? Where do I start?</p>
+        </div>
+        <div id="intro_planning" class="step slide">
+            <p>How do I approach a data science task? Where do I start?</p>
+            <p>What is needed of me? How do I measure success? What do I need?</p>
+            <p>How do I structure my workplan?</p>
+        </div>
+        <div id="intro_wrangling" class="step slide">
+            <p>How do I approach a data science task? Where do I start?</p>
+            <p>What is needed of me? How do I measure success? What do I need?</p>
+            <p>How do I structure my workplan?</p>
+            <p>How do I structure my dataflow? What data-record transformations do I use?</p>
+            <p>What data-feature transformations do I use?</p>
+            <p>How do I choose my learning model and optimization algorithm?</p>
+        </div>
+        <div id="intro_engineering" class="step slide">
+            <p>How do I approach a data science task? Where do I start?</p>
+            <p>What is needed of me? How do I measure success? What do I need?</p>
+            <p>How do I structure my workplan?</p>
+            <p>How do I structure my dataflow? What data-record transformations do I use?</p>
+            <p>What data-feature transformations do I use?</p>
+            <p>How do I choose my learning model and optimization algorithm?</p>
+            <p>How do I acieve and maintain agility and scalability?</p>
+            <p>How do I secure user acceptance?</p>
+        </div>
+        <div id="applied_data_science" class="step class" data-z=3000>
+            <object data="images/Applied_Data_Science_Presented_by_Yhat.pdf" width="640" height="480">Applied Data Science (Y-hat)</object>
+        </div>
+        <div id="agenda" class="step slide" data-x=2000>
+            <h2>Agenda</h2>
             <ul>
+                <li>Workflow:</li>
+                <ol>
+                    <li>POC (domain, data, algo, example)</li>
+                    <li>escalation (algo, engineering) </li>
+                </ol>
+                <li>Data Wrangling:</li>
+                <ol>
+                    <li> Objectives</li>
+                    <li> Procedures</li>
+                    <li> example</li>
+                </ol>
+                <li>Feature Engineering:</li>
+                <ol>
+                    <li> Manual/learned</li>
+                    <li> Structured/unstructured data</li>
+                </ol>
+                <li>Diagnostics &amp; Debugging</li>
+                <li>Communicating Results</li>
                 <li>Beyond scope: How to get people to let the computer have a go at some standing problem?</li>
             </ul>
         </div>
         <div id="workflow" class="step slide" data-x=4000>
-            <h1 id="Workflowforaparticularepicandfeature">Workflow for a particular epic and feature</h1>
-            <object data="images/Applied_Data_Science_Presented_by_Yhat.pdf" width="640" height="480">Applied Data Science (Y-hat)</object>
+            <h2 id="Workflowforaparticularepicandfeature">Workflow for a particular epic and feature</h2>
         </div>
         <div id="sprint" class="step slide" data-x=6000>
-            <h2 id="Sprint">Sprint</h2>
+            <h3 id="Sprint">Sprint</h3>
             <table cellpadding="18px">
                 <tbody style="font-size: 18px; ">
                     <tr>
@@ -72,73 +119,66 @@
             <img src="images/MVP-2.0.jpg" alt="https://www.anintegratedworld.com/minimum-viable-product-in-reality" />
         </div>
         <div id="business_domain" class="step slide" data-x=8000 data-y=1000>
-            <li><u>Business domain</u>
-                <ol>
-                    <li>Value proposition (hypothesis). See
-                        <a href="https://youappi.atlassian.net/wiki/display/~Inon/Data+Driven+Value#DataDrivenValue-CounterFactualEvaluation">Counter-Factual Evaluation</a>
-                    </li>
-                    <li>Domain model</li>
-                    <li>Minimally Viable Product (MVP) requirements → KPIs → scoring &amp; test method (<a href="https://en.wikipedia.org/wiki/Confusion_matrix" class="external-link" rel="nofollow">overall performance</a> &amp; particularly important cases)</li>
-                </ol>
-            </li>
+            <h3>Business domain</h3>
+            <ol>
+                <li>Value proposition (hypothesis). See
+                    <a href="https://youappi.atlassian.net/wiki/display/~Inon/Data+Driven+Value#DataDrivenValue-CounterFactualEvaluation">Counter-Factual Evaluation</a>
+                </li>
+                <li>Domain model</li>
+                <li>Minimally Viable Product (MVP) requirements → KPIs → scoring &amp; test method (<a href="https://en.wikipedia.org/wiki/Confusion_matrix" class="external-link" rel="nofollow">overall performance</a> &amp; particularly important cases)</li>
+            </ol>
         </div>
         <div id="data_domain" class="step slide" data-x=8000 data-y=2000>
-            <li><a href="#data_wrangling" rel="nofollow"><u>Data domain</u></a>
-                <ol>
-                    <li>Identification of (possibly) relevant data sources</li>
-                    <li>Fusion of raw data-sources (e.g. aggregation)</li>
-                    <li><a href="http://www.itl.nist.gov/div898/handbook/index.htm" class="external-link" rel="nofollow">Data model</a></li>
-                    <li>Data visualization and exploration</li>
-                    <li>Data cleansing</li>
-                </ol>
-            </li>
+            <h3><a href="#data_wrangling" rel="nofollow">Data domain</a></h3>
+            <ol>
+                <li>Identification of (possibly) relevant data sources</li>
+                <li>Fusion of raw data-sources (e.g. aggregation)</li>
+                <li><a href="http://www.itl.nist.gov/div898/handbook/index.htm" class="external-link" rel="nofollow">Data model</a></li>
+                <li>Data visualization and exploration</li>
+                <li>Data cleansing</li>
+            </ol>
         </div>
         <div id="algo_domain" class="step slide" data-x=8000 data-y=3000>
+            <h3><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow">Algorithm domain</a></h3>
             <ol>
-                <li><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow"><u>Algorithm domain</u></a>
+                <li><a href="#feature_engineering" rel="nofollow">Feature* engineering</a></li>
+                <li>Auxiliary models (e.g. effect of time elapsed from feature sampling until target sampling, or prediction).</li>
+                <li>Choice of learning model and algorithm: </li>
+            </ol>
+        </div>
+        <div id="model" class="step slide" data-x=10000 data-y=3000>
+            <h4>Model</h4>
+            <ol>
+                <li>Supervised vs. unsupervised (i.e. quantity and quality of labeled data)</li>
+                <li>Parametric vs. non-parametric</li>
+                <li>Discriminative (predictive) vs. Generative (causal)</li>
+                <li>Accommodate or ignore feature interactions</li>
+            </ol>
+        </div>
+        <div id="algo" class="step slide" data-x=12000 data-y=3000>
+            <h4>Optimization algorithm</h4>
+            <ol>
+                <li>Iterative vs. variational optimization (i.e. on-line or off-line)</li>
+                <li>Non-parallel vs. Parallel/Distributed (find some separability)
                     <ol>
-                        <li><a href="#feature_engineering" rel="nofollow">Feature* engineering</a></li>
-                        <li>Auxiliary models (e.g. effect of time elapsed from feature sampling until target sampling, or prediction).</li>
-                        <li>Choice of learning model and algorithm: </li>
+                        <li><a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Stochastic_approximation" class="external-link" rel="nofollow">Stochastic Approximation</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Metaheuristic#Parallel_metaheuristics" class="external-link" rel="nofollow">metaheuristics</a></li>
+                        <li>Split the cost function, and then optimize (e.g. <a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Augmented_Lagrangian_method#Alternating_direction_method_of_multipliers" class="external-link" rel="nofollow">ADMM</a>)</li>
+                        <li>GPGPU</li>
                     </ol>
                 </li>
             </ol>
         </div>
-        <div id="model" class="step slide" data-x=10000 data-y=3000>
-            <li>Model
-                <br/>
-                <ol>
-                    <li>Supervised vs. unsupervised (i.e. quantity and quality of labeled data)</li>
-                    <li>Parametric vs. non-parametric</li>
-                    <li>Discriminative (predictive) vs. Generative (causal)</li>
-                    <li>Accommodate or ignore feature interactions</li>
-                </ol>
-            </li>
-        </div>
-        <div id="algo" class="step slide" data-x=12000 data-y=3000>
-            <li>Optimization algorithm
-                <ol>
-                    <li>Iterative vs. variational optimization (i.e. on-line or off-line)</li>
-                    <li>Non-parallel vs. Parallel/Distributed (find some separability)
-                        <ol>
-                            <li><a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Stochastic_approximation" class="external-link" rel="nofollow">Stochastic Approximation</a></li>
-                            <li><a href="https://en.wikipedia.org/wiki/Metaheuristic#Parallel_metaheuristics" class="external-link" rel="nofollow">metaheuristics</a></li>
-                            <li>Methods to split the cost function, and then optimize (e.g. <a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Augmented_Lagrangian_method#Alternating_direction_method_of_multipliers" class="external-link" rel="nofollow">ADMM</a>)</li>
-                            <li>GPGPU</li>
-                        </ol>
-                    </li>
-                    <li>Consider solving the <a href="https://en.wikipedia.org/wiki/Duality_(optimization)" class="external-link" rel="nofollow">dual problem</a>
-                        <ol>
-                            <li>Dual SVM problem</li>
-                            <li>Matrix Factorization using ALS (particularly where the inverse problem is also of interest, such as in Recommender Systems)</li>
-                            <li>Projection to Latent Structures (PLS)</li>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
+        <div id="duality" class="step slide" data-x=12000 data-y=3000 data-z=-2000 data-rotate-y=180 data-scale=2>
+            <h4>Duality</h4> Consider solving the <a href="https://en.wikipedia.org/wiki/Duality_(optimization)" class="external-link" rel="nofollow">dual problem</a>
+            <ol>
+                <li>Dual SVM problem</li>
+                <li>Matrix Factorization using ALS (particularly where the inverse problem is also of interest, such as in Recommender Systems)</li>
+                <li>Projection to Latent Structures (PLS)</li>
+            </ol>
         </div>
         <div id="regularization" class="step slide" data-x=14000 data-y=3000>
-            <h2>Regularization</h2>
+            <h3>Regularization</h3>
             <ul>
                 <li><em>L-1 (LASSO)</em>: Induce feature sparsity (L-0 will induce entry-wise sparsity, but is not convex)</li>
                 <li><em>L-2 (Tikhonov regularization a.k.a. ridge regression)</em>: Induce smoothness, reduce multicollinearity </li>
@@ -147,92 +187,82 @@
             The regularization term causes model parameters to shrink, in order to avoid the additional cost incurred. For small parameters, lower regularization order (L-1) will incur a higher cost than a higher order (L-2), making the effects of Regularization more dramatic: From inducing smoothness by decreasing parameter magnitude, to inducing sparsity by taking all but a few parameters to zero. See, for instance, chapter 6 of "An Introduction to Statistical Learning".
         </div>
         <div id="model_vs_algo_complexity" class="step slide" data-x=16000 data-y=3000>
-            <li>Model complexity vs. feature complexity. Implications (respectively):
-                <br/>
-                <ol>
-                    <li>Long learn time vs. long predict time</li>
-                    <li>Predictive power is sealed at learn-time vs. predict-time</li>
-                </ol>
-            </li>
-            </ol>
-            </li>
-            </ol>
-            </li>
+            <h4>Model complexity vs. feature complexity</h4>
+            <ol>
+                <li>Long learn time vs. long predict time</li>
+                <li>Predictive power is sealed at learn-time vs. predict-time</li>
             </ol>
         </div>
         <div id="algo_example" class="step slide" data-x=8000 data-y=4000>
-            <p>e.g. Supervised, parametric, generative, non-interacting, simple model, using an iterative algorithm: <a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function" class="external-link" rel="nofollow">GLMs</a> using Stochastic Gradient Descent.</p>
+            <h3>Learning Algorithm Example</h3>
+            <p>e.g. Supervised, parametric, generative, non-interacting, lightweight model, using an iterative algorithm:</p>
+            <p><a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function" class="external-link" rel="nofollow">GLMs</a> using Stochastic Gradient Descent.</p>
             <p>* 'Feature' in the data science sense, not the software development sense.</p>
         </div>
         <div id="escalation" class="step slide" data-x=10000>
             <h2 id="Escalation" align="center" style="text-align: center; vertical-align: middle">Escalation</h2>
+        </div>
+        <div id="escalation_algorithm" class="step slide" data-x=12000>
+            <h3><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow">Algorithm domain</a>
+                    <img src="images/whiteboard-automated-stacking.png" alt="http://mlwave.com/kaggle-ensembling-guide" /></h3>
+        </div>
+        <div id="metalearning" class="step slide" data-x=12000 data-y=1000>
+            <h3><a href="http://www.scholarpedia.org/article/Metalearning" class="external-link" rel="nofollow">Meta-learning</a></h3>
             <ol>
-                <li><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence" class="external-link" rel="nofollow"><u>Algorithm domain</u></a>
-                    <img src="images/whiteboard-automated-stacking.png" alt="http://mlwave.com/kaggle-ensembling-guide" />
+                <li><a href="http://www.scholarpedia.org/article/Ensemble_learning" class="external-link" rel="nofollow">Ensemble learning</a>
+                    <br/>
+                    <ol>
+                        <li>Re-sampling: Deterministic (jackknifing) vs. stochastic (bagging)</li>
+                        <li>Boosting (e.g. AdaBoost, XGBoost)</li>
+                    </ol>
+                </li>
+                <li>Self-modification:
+                    <ol>
+                        <li>Epochs</li>
+                    </ol>
                 </li>
             </ol>
         </div>
-        <div id="metalearning" class="step slide" data-x=10000 data-y=1000>
-            <li><a href="http://www.scholarpedia.org/article/Metalearning" class="external-link" rel="nofollow">Meta-learning</a>
-                <br/>
-                <ol>
-                    <li><a href="http://www.scholarpedia.org/article/Ensemble_learning" class="external-link" rel="nofollow">Ensemble learning</a>
-                        <br/>
+        <div id="model_validation" class="step slide" data-x=12000 data-y=2000>
+            <h3>Model validation &amp; selection</h3>
+            <ol>
+                <li>Cross-validation</li>
+                <li>Information Criteria</li>
+                <li>Confusion Matrix</li>
+                <li>AUC</li>
+                <li>A/B user testing: alpha, beta, production</li>
+            </ol>
+        </div>
+        <div id="software" class="step slide" data-x=14000>
+            <h2>Software development domain</h2>
+            <img src="images/BigPicMetadataMgmt.jpg" alt="https://www.youtube.com/watch?v=Zg9BNGV_DAg" />
+        </div>
+        <div id="integration" class="step slide" data-x=14000 data-y=1000>
+            <h3> Product integration</h3>
+            <ol>
+                <li>Interface: In-database, API, REST, dashboard, ...</l..;;i>
+                    <li>Data pipeline DAG
                         <ol>
-                            <li>Re-sampling: Deterministic (jackknifing) vs. stochastic (bagging)</li>
-                            <li>Boosting (e.g. AdaBoost, XGBoost)</li>
+                            <li>Edges:
+                                <ol>
+                                    <li>Interface: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
+                                    </li>
+                                    <li>Implementation: Functors (function reference plus state, e.g. Java method reference)</li>
+                                </ol>
+                            </li>
+                            <li>Vertices:
+                                <ol>
+                                    <li>Spouts: Data sources</li>
+                                    <li>Bolts: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
+                                </ol>
+                            </li>
                         </ol>
                     </li>
-                    <li>Self-modification:
-                        <ol>
-                            <li>Epochs</li>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
-        </div>
-        <div id="model_validation" class="step slide" data-x=10000 data-y=2000>
-            <li>Model validation &amp; selection
-                <ol>
-                    <li>Cross-validation</li>
-                    <li>Information Criteria</li>
-                    <li>Confusion Matrix</li>
-                    <li>AUC</li>
-                    <li>A/B user testing: alpha, beta, production</li>
-                </ol>
-            </li>
-        </div>
-        <div id="software" class="step slide" data-x=12000>
-            <li><u>Software development domain</u>
-            </li><img src="images/BigPicMetadataMgmt.jpg" alt="https://www.youtube.com/watch?v=Zg9BNGV_DAg" />
-        </div>
-        <div id="integration" class="step slide" data-x=12000 data-y=1000>
-            <li> Product integration
-                <ol>
-                    <li>Interface: In-database, API, REST, dashboard, ...</l..;;i>
-                        <li>Data pipeline DAG
-                            <ol>
-                                <li>Edges:
-                                    <ol>
-                                        <li>Interface: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
-                                        </li>
-                                        <li>Implementation: Functors (function reference plus state, e.g. Java method reference)</li>
-                                    </ol>
-                                </li>
-                                <li>Vertices:
-                                    <ol>
-                                        <li>Spouts: Data sources</li>
-                                        <li>Bolts: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
-                                    </ol>
-                                </li>
-                            </ol>
-                        </li>
-                </ol>
                 </li>
                 <li>Scalability, including parallelization (e.g. submit micro-batches for prediction, rather than single events).</li>
-                </ol>
+            </ol>
         </div>
-        <div id="devops" class="step slide" data-x=12000 data-y=2000>
+        <div id="devops" class="step slide" data-x=14000 data-y=2000>
             <li>Test plan</li>
             <li>Documentation</li>
             <li>Configuration management (input parameters, including hyper-parameters)
@@ -249,29 +279,27 @@
             </ol>
             </li>
         </div>
-        <div id="auditing" class="step slide" data-x=14000 data-y=2000>
-            <h1>Auditing</h1>
+        <div id="auditing" class="step slide" data-x=16000 data-y=2000>
+            <h3>Auditing</h3>
             <ol>
                 <li>Logs</li>
                 <li>Debug plots</li>
-                <li>DB
-                    <br/>
-                    <ol>
-                        <li>Timestamp</li>
-                        <li>Model ID</li>
-                        <li>Source code version</li>
-                        <li>Input</li>
-                        <li>Output</li>
-                        <li>Performance metrics</li>
-                    </ol>
-                </li>
+                <li>DB</li>
+                <ol>
+                    <li>Timestamp</li>
+                    <li>Model ID</li>
+                    <li>Source code version</li>
+                    <li>Input</li>
+                    <li>Output</li>
+                    <li>Performance metrics</li>
+                </ol>
             </ol>
         </div>
-        <div id="data_wrangling" class="step slide" data-x=14000>
-            <h1 id="DataWrangling" align="center" style="text-align: center; vertical-align: middle">Data Wrangling</h1>
+        <div id="data_wrangling" class="step slide" data-x=16000>
+            <h2 id="DataWrangling" align="center" style="text-align: center; vertical-align: middle">Data Wrangling</h2>
         </div>
-        <div id="objectives" class="step slide" data-x=16000>
-            <h2 style="text-align: justify;" id="Objectives">Objectives</h2>
+        <div id="objectives" class="step slide" data-x=18000>
+            <h3 style="text-align: justify;" id="Objectives">Objectives</h3>
             <ul style="margin-left: 2.0em;">
                 <li>No <em>missing</em> values (null / None, undefined / N/A, ...)</li>
                 <li>No <em>invalid</em> values (NaN, inf, ' ', ...)</li>
@@ -282,8 +310,8 @@
             </ul>
             Rational design: Caveat! Every data processing decision will probably affect the model's predictive performance.
         </div>
-        <div id="procedure" class="step slide" data-x=18000>
-            <h2 style="text-align: justify;" id="Procedure">Procedure</h2>
+        <div id="procedure" class="step slide" data-x=20000>
+            <h3 style="text-align: justify;" id="Procedure">Procedure</h3>
             <ol style="margin-left: 2.0em;">
                 <li>Overview data schema
                     <br/>
@@ -304,22 +332,22 @@
                 </li>
             </ol>
         </div>
-        <div id="data_cleansing" class="step slide" data-x=18000 data-y=1000>
-            <li>Cleanse features with missing, invalid, innumerable, or un-normalized values:
-                <ol style="margin-left: 2.0em;">
-                    <li><u>Missing</u>: Drop (<em>filter</em>) or <em>fill</em> (imputation)?
-                        <ol>
-                            <li>If filling in, what with? zero-order = most probable (mode), more complex logic...</li>
-                            <li>Consider using a CART model.</li>
-                            <li>Selection bias: Find ways to compensate for data which was not measured, in order to take the base rate into account.</li>
-                        </ol>
-                    </li>
-                    <li><u>Invalid</u>: Manipulate (<em>transform</em>) or <em>replace</em>?</li>
-                    <li>It can be useful to add new data columns for the cleansed and compounded data, rather than overwriting the original columns.</li>
-                </ol>
-            </li>
+        <div id="data_cleansing" class="step slide" data-x=20000 data-y=1000>
+            <h3>Data cleansing</h3> Cleanse features with missing, invalid, innumerable, or un-normalized values:
+            <ol style="margin-left: 2.0em;">
+                <li><u>Missing</u>: Drop (<em>filter</em>) or <em>fill</em> (imputation)?
+                    <ol>
+                        <li>If filling in, what with? zero-order = most probable (mode), more complex logic...</li>
+                        <li>Consider using a CART model.</li>
+                        <li>Selection bias: Find ways to compensate for data which was not measured, in order to take the base rate into account.</li>
+                    </ol>
+                </li>
+                <li><u>Invalid</u>: Manipulate (<em>transform</em>) or <em>replace</em>?</li>
+                <li>It can be useful to add new data columns for the cleansed and compounded data, rather than overwriting the original columns.</li>
+            </ol>
         </div>
-        <div id="data_cleansing2" class="step slide" data-x=18000 data-y=2000>
+        <div id="data_cleansing2" class="step slide" data-x=20000 data-y=2000>
+            <h3>More data-record transformations</h3>
             <li><u>Duplicate</u>: Merge duplicate (or near-duplicate) samples, and compensate by introducing a double weight for the effect of the merged sample on the model.</li>
             <li>Is <em>enumeration </em>viable?
                 <br/>
@@ -329,8 +357,8 @@
                 </ol>
             </li>
         </div>
-        <div id="value_normalization" class="step slide" data-x=18000 data-y=3000>
-            <h2>Value Normalization</h2>
+        <div id="value_normalization" class="step slide" data-x=20000 data-y=3000>
+            <h3>Value Normalization</h3>
             <ol>
                 <li>Tolerance of outliers
                     <ol>
@@ -343,58 +371,55 @@
                 <li>Mathematical transformations to attain zero mean and uniform (~ unit) variance
                     <ol>
                         <li>Logarithmic transformations (log, semilog, log-log).</li>
-                        <li><span style="color: rgb(37,37,37);">Box–Cox (Power) Transformation</span></li>
+                        <li>Box–Cox (Power) Transformation</li>
                     </ol>
                 </li>
             </ol>
         </div>
-        <div id="db_normalization" class="step slide" data-x=18000 data-y=4000>
-            <h2>DB Normalization</h2>
+        <div id="db_normalization" class="step slide" data-x=20000 data-y=4000>
+            <h3>DB Normalization</h3>
             <ol>
                 <li>Decomposition of composite data into multiple, primitive typed fields</li>
                 <li>Aggregation of identical observations using 'sum'/'count' fields.</li>
                 <li>Propositionalization: RDB Feature Synthesis (e.g. Deep Feature Synthesis)</li>
             </ol>
         </div>
-        <div id="feature_selection" class="step slide" data-x=18000 data-y=5000>
-            <li>Feature selection
-                <br/>
-                <ol>
-                    <li>Consider <em>removing noisy features</em> (e.g. mostly missing or unreliable for any other reason), to attempt more concise models first.</li>
-                    <li>Add <em>compound features</em>, if warranted, including the <em>kernel trick</em></li>
-                </ol>
-            </li>
+        <div id="feature_selection" class="step slide" data-x=20000 data-y=5000>
+            <h3>Feature selection</h3>
+            <ol>
+                <li>Consider <em>removing noisy features</em> (e.g. mostly missing or unreliable for any other reason), to attempt more concise models first.</li>
+                <li>Add <em>compound features</em>, if warranted, including the <em>kernel trick</em></li>
+            </ol>
         </div>
-        <div id="randomization" class="step slide" data-x=18000 data-y=6000>
-            <li>
-                <p><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional* weight when fitting.
-                    <br/>* Proportional to their original fraction in the sample set.</p>
-            </li>
-            <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
+        <div id="randomization" class="step slide" data-x=20000 data-y=6000>
+            <h3>Randomization</h3>
+            <ul>
+                <li><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional weight when fitting. (Proportional to their original fraction in the sample set) </li>
+                <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
+            </ul>
         </div>
-        <div id="data_leakage" class="step slide" data-x=18000 data-y=7000>
-            <li><u>Data contamination/leakage</u>:
-                <ol>
-                    <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
-                    <li><u>Problem</u>: Some feature A, highly correlates with the target variable, but offers little predictive power (correlation vs. causation).</li>
-                    <li><u>Solution</u>:
-                        <ol>
-                            <li>Introduce more feature/s which have low correlation with A, or drop A altogether.</li>
-                            <li>Consider keeping features even if they have low correlation with the target variable, directly.</li>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
+        <div id="data_leakage" class="step slide" data-x=20000 data-y=7000>
+            <h3>Data contamination / leakage</h3>
+            <ol>
+                <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
+                <li><u>Problem</u>: Some feature A, highly correlates with the target variable, but offers little predictive power (correlation vs. causation).</li>
+                <li><u>Solution</u>:
+                    <ol>
+                        <li>Introduce more feature/s which have low correlation with A, or drop A altogether.</li>
+                        <li>Consider keeping features even if they have low correlation with the target variable, directly.</li>
+                    </ol>
+                </li>
+            </ol>
         </div>
-        <div id="data_tips" class="step slide" data-x=18000 data-y=8000>
+        <div id="data_tips" class="step slide" data-x=20000 data-y=8000>
             <ul>
                 <li>The various cleansing and compounding stages can be programmed to execute sequentially, as part of an, e.g. spark.ml.Pipeline, and followed by 'train/fit' and 'test/score' phases.</li>
             </ul>
         </div>
-        <div id="extract_chrono" class="step slide" data-x=20000>
+        <div id="extract_chrono" class="step slide" data-x=22000>
             <h3 id="Example:ExtractDate&amp;Timebychronofields">Example: Extract Date &amp; Time by chrono fields</h3>
         </div>
-        <div id="normalized_fields" class="step slide" data-x=20000 data-y=1000>
+        <div id="normalized_fields" class="step slide" data-x=22000 data-y=1000>
             <li><u>Normalized fields:</u>
                 <ol>
                     <li>Century (zero-based): e.g. 20 for 20XX</li>
@@ -408,7 +433,7 @@
                 </ol>
             </li>
         </div>
-        <div id="derived_fields" class="step slide" data-x=20000 data-y=2000>
+        <div id="derived_fields" class="step slide" data-x=22000 data-y=2000>
             <li><u>Derived informative fields:</u>
                 <br/>
                 <ol>
@@ -422,27 +447,36 @@
                 </ol>
             </li>
         </div>
-        <div id="feature_engineering" class="step slide" data-x=22000>
-            <h1 id="FeatureEngineeringFeatureengineeringapproaches" align="center" style="text-align: center; vertical-align: middle">Feature engineering approaches</h1>
+        <div id="feature_engineering" class="step slide" data-x=24000>
+            <h2 id="FeatureEngineeringFeatureengineeringapproaches" align="center" style="text-align: center; vertical-align: middle">Feature engineering approaches</h2>
         </div>
-        <div id="manual-features" class="step slide" data-x=22000 data-y=1000>
+        <div id="manual-features" class="step slide" data-x=24000 data-y=1000>
             <ol>
                 <li><u>Manual</u>:
                     <ol>
-                        <li>extraction → selection → reduction</li>
-                        <li>regularization</li>
+                        <li>extraction → </li>
+                        <li>selection → </li>
+                        <li>reduction</li>
                     </ol>
                 </li>
             </ol>
         </div>
-        <div id="learned-features" class="step slide" data-x=22000 data-y=2000>
+        <div id="learned-features" class="step slide" data-x=24000 data-y=2000>
             <li><u>Learning</u>:
                 <ol>
                     <li>Structured data:
                         <ol>
-                            <li>Neglecting interactions: Factorization of the design matrix</li>
-                            <li>Include interactions: Pruned decision trees</li>
-                            <li>cluster analysis</li>
+                            <li><u>Neglecting interactions</u>: Factorization of the design matrix</li>
+                            <li><u>Include interactions</u></li>
+                            <ol>
+                                <li>Regularization</li>
+                                <li>Pruned CARTs</li>
+                            </ol>
+                            <li>Cluster Analysis</li>
+                            <ol>
+                                <li>k-clusters</li>
+                                <li>density based</li>
+                            </ol>
                         </ol>
                     </li>
                     <li>Unstructured* data:
@@ -453,7 +487,7 @@
                 </ol>
             </li>
         </div>
-        <div id="unstructured_data" class="step slide" data-x=22000 data-y=3000>
+        <div id="unstructured_data" class="step slide" data-x=24000 data-y=3000>
             <p>Examples of unstructured data most amenable to ANNs:</p>
             <ol>
                 <li>NLP</li>
@@ -466,14 +500,66 @@
                 </li>
             </ol>
         </div>
-        <div id="diagnostics_and_debugging" class="step slide" data-x=24000>
-            <h1 id="mldebugDiagnostics&amp;debugging">Diagnostics &amp; debugging</h1>
-            <object data="images/ML-advice.pdf" width="640" height="480">ML Advice (Andrew Ng)</object>
+        <div id="diagnostics_and_debugging" class="step slide" data-x=26000>
+            <h2 id="mldebugDiagnostics&amp;debugging">Diagnostics &amp; debugging</h2>
+            <ol>
+                <li>Anamnesis</li>
+                <ol>
+                    <li>Value of regularization function</li>
+                    <li>Value of cost function</li>
+                    <li>Value of scoring function on training set</li>
+                    <li>Value of scoring function on test set</li>
+                </ol>
+                <li>Diagnosis</li>
+                <ol>
+                    <li>High variance (training error &lt;&lt; test error)</li>
+                    <li>High bias (training error &gt;&gt; acceptable test error)</li>
+                    <li>Optimization algorithm (cost has not converged)</li>
+                    <li>Optimization objective is not representative (goal &gt;&gt; score)</li>
+                    * goal function is negative cost function.
+                </ol>
+            </ol>
         </div>
-        <div id="communicating_results" class="step slide" data-x=26000>
-            <h1 id="Communicatingresults ">Communicating results</h1>
+        <div id="resolution" class="step slide" data-x=26000 data-y=1000>
+            <h4>Prescription &#8478;</h4>
+            <ol>
+                <li>High variance</li>
+                <ul>
+                    <li>Get more training samples</li>
+                    <li>Exclude more features</li>
+                </ul>
+                <li>High bias</li>
+                <ul>
+                    <li>Include more features</li>
+                    <li>Get data with new features</li>
+                </ul>
+                <li>Optimization algorithm does not converge</li>
+                <ul>
+                    <li>Run more iterations</li>
+                    <li>Change initial parameter values</li>
+                    <li>Switch to adaptive step size / learning rate</li>
+                    <li>Change optimization algorithm</li>
+                </ul>
+                <li>Optimization objective is not representative</li>
+                <ul>
+                    <li>Change metaparameters (regularization / margin)</li>
+                    <li>Change ML model</li>
+                </ul>
+            </ol></div>
+        <div id="error_analysis" class="step slide" data-x=26000 data-y=2000>
+            <ul>
+                <li>Error Analysis</li>
+                How much <em>worse</em> is the current error, relative to <em>perfect performance</em>, due to each system component (data transformation, feature sub-set)?
+                Start backwards from output, and plug in the <em>ground-truth</em> into increasingly earlier components. Check how much the error in output changes with the addition of each component.
+                <li>Ablative Analysis</li>
+                How much <em>better</em> is the current error, due to each system component, relative to the performance expected <em>without it</em>?
+                Define the minimal viable system. Then, starting with the full system, remove one component at a time, check the change in error, and stop when reaching a state where no more components can be removed.
+            </ul>
         </div>
-        <div id="presentation_animations" class="step slide" data-x=28000>
+        <div id="communicating_results" class="step slide" data-x=28000>
+            <h2 id="Communicatingresults ">Communicating results</h2>
+        </div>
+        <div id="presentation_animations" class="step slide" data-x=28000 data-y=1000>
             <h2 id="PresentationAnimationsPresentationanimations ">Presentation animations</h2>
             <ol>
                 <li>overview &amp; each top-level step as a separate module</li>
@@ -485,8 +571,8 @@
                 <li>use animated transitions to create a sense of motion (but avoid motion-sickness). For example, <a href="http://strut.io/editor/ " class="external-link " rel="nofollow ">strut.io</a>.</li>
             </ol>
         </div>
-        <div id="impressjs" class="step slide " data-x=28000 data-y=1000>
-            <h2>impress.js</h2>
+        <div id="impressjs" class="step slide " data-x=28000 data-y=2000>
+            <h3>impress.js</h3>
             <ul>
                 <li>Use the source!
                     <ul>
@@ -503,7 +589,7 @@
                 </li>
             </ul>
         </div>
-        <div id="overview" class="step slide" data-x=14000 data-scale=20>
+        <div id="overview" class="step" data-x=15000 data-scale=20>
         </div>
     </div>
     <script src="js/impress.js "></script>
