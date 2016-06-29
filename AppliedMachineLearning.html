@@ -214,7 +214,7 @@
         </div>
         <div id="escalation_algorithm" class="step slide" data-x=12000>
             <h3><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence">Algorithm domain</a></h3>
-            <img src="images/whiteboard-automated-stacking.png" alt="http://mlwave.com/kaggle-ensembling-guide"/>
+            <img src="images/whiteboard-automated-stacking.png" alt="http://mlwave.com/kaggle-ensembling-guide" />
         </div>
         <div id="metalearning" class="step slide" data-x=12000 data-y=1000>
             <h3><a href="http://www.scholarpedia.org/article/Metalearning">Meta-learning</a></h3>
@@ -222,8 +222,17 @@
                 <li><a href="http://www.scholarpedia.org/article/Ensemble_learning">Ensemble learning</a>
                     <br/>
                     <ol>
-                        <li>Re-sampling: Deterministic (jackknifing) vs. stochastic (bagging)</li>
-                        <li>Boosting (e.g. AdaBoost, XGBoost)</li>
+                        <li>Re-sampling</li>
+                        <ol>
+                            <li>Deterministic (jackknifing)</li>
+                            <li>Stochastic (bagging)</li>
+                        </ol>
+                        <li>Boosting</li>
+                        <ul>
+                            <li>AdaBoost</li>
+                            <li>XGBoost</li>
+                            <li>...</li>
+                        </ul>
                     </ol>
                 </li>
                 <li>Self-modification:
@@ -240,7 +249,7 @@
                 <li>Information Criteria</li>
                 <li>Confusion Matrix</li>
                 <li>AUC</li>
-                <li>A/B user testing: alpha, beta, production</li>
+                <li>A/B user testing: &alpha;, &beta;, production</li>
             </ol>
         </div>
         <div id="software" class="step slide" data-x=14000>
@@ -250,51 +259,50 @@
         <div id="integration" class="step slide" data-x=14000 data-y=1000>
             <h3> Product integration</h3>
             <ol>
-                <li>Interface: In-database, API, REST, dashboard, ...</l..;;i>
-                    <li>Data pipeline DAG
+                <li><b><u>Interface</u></b>: In-database, API, REST, dashboard, ...</l..;;i>
+                    <li><b><u>Data pipeline DAG</u></b>
                         <ol>
-                            <li>Edges:
+                            <li><b>Edges</b>:
                                 <ol>
-                                    <li>Interface: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
+                                    <li><u>Interface</u>: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
                                     </li>
-                                    <li>Implementation: Functors (function reference plus state, e.g. Java method reference)</li>
+                                    <li><u>Implementation</u>: Functors (function reference plus state, e.g. Java method reference)</li>
                                 </ol>
                             </li>
-                            <li>Vertices:
+                            <li><b>Vertices</b>:
                                 <ol>
-                                    <li>Spouts: Data sources</li>
-                                    <li>Bolts: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
+                                    <li><u>Spouts</u>: Data sources</li>
+                                    <li><u>Bolts</u>: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
                                 </ol>
                             </li>
                         </ol>
                     </li>
                 </li>
-                <li>Scalability, including parallelization (e.g. submit micro-batches for prediction, rather than single events).</li>
+                <li><b><u>Scalability</u></b>: Parallelization (e.g. submit micro-batches for prediction, rather than single events), etc.</li>
             </ol>
         </div>
-        <div id="devops" class="step slide" data-x=14000 data-y=2000>
-            <li>Test plan</li>
-            <li>Documentation</li>
-            <li>Configuration management (input parameters, including hyper-parameters)
-                <ol>
-                    <li>Model ID</li>
-                    <li>Model description</li>
-                    <li>Model parameters</li>
-                    <li>Datetime in-force</li>
-                </ol>
-            </li>
-            <li>Continuous QA: Monitor for performance degradation</li>
-            <li>Persist historical results (and parameters used to get them, if practical. If not, store the historic models as serialized objects).
-            </li>
-            </ol>
-            </li>
+        <div id="devops" class="step slide" data-x=14000 data-y=2000 style="line-height: 48px">
+            <ul>
+                <li><b>Test plan</b></li>
+                <li><b>Documentation</b></li>
+                <li><b>Configuration management</b>: input parameters, including hyper-parameters
+                    <ol>
+                        <li>Model ID</li>
+                        <li>Model description</li>
+                        <li>Model parameters</li>
+                        <li>Datetime in-force</li>
+                    </ol>
+                </li>
+                <li><b>Continuous QA</b>: Monitor for performance degradation</li>
+                <li><b>Persist historical results</b> (and parameters used to get them, if practical. If not, store the historic models as serialized objects).</li>
+            </ul>
         </div>
         <div id="auditing" class="step slide" data-x=16000 data-y=2000>
             <h3>Auditing</h3>
             <ol>
-                <li>Logs</li>
-                <li>Debug plots</li>
-                <li>DB</li>
+                <li><b>Logs</b></li>
+                <li><b>Debug plots</b></li>
+                <li><b>DB</b></li>
                 <ol>
                     <li>Timestamp</li>
                     <li>Model ID</li>
@@ -332,7 +340,7 @@
                 <li><a href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda34.htm">Data visualization</a></li>
                 <ol>
                     <li>Use a notebook (Jupyter, Zeppelin, etc.)</li>
-                    <li>Test assumptions of normality and heteroskedasticity using <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/4plot.htm">4-Plot</a></li>
+                    <li>Test assumptions of normality and homoscedasticity using <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/4plot.htm">4-Plot</a></li>
                 </ol>
             </ol>
         </div>
@@ -574,9 +582,9 @@
         </div>
         <div id="error_analysis" class="step slide" data-x=26000 data-y=2000>
             <ul>
-                <li>Error Analysis</li>
+                <li><u>Error Analysis</u></li>
                 How much <em>worse</em> is the current error, relative to <em>perfect performance</em>, due to each system component (data transformation, feature sub-set)? Start backwards from output, and plug in the <em>ground-truth</em> into increasingly earlier components. Check how much the error in output changes with the addition of each component.
-                <li>Ablative Analysis</li>
+                <li><u>Ablative Analysis</u></li>
                 How much <em>better</em> is the current error, due to each system component, relative to the performance expected <em>without it</em>? Define the minimal viable system. Then, starting with the full system, remove one component at a time, check the change in error, and stop when reaching a state where no more components can be removed.
             </ul>
         </div>
