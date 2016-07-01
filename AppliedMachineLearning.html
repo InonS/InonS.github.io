@@ -142,9 +142,9 @@
                 <li>Timeliness</li>
                 <ul>
                     <li><b>Adaptivity</b> (how fast is <em>the world</em> changing?
-                        <br>→ <u>learn time</u>): Event (Reinforcement Learning) vs. batch vs. learn once</li>
+                        <br>→ <u>learning rate</u>): Event (Reinforcement Learning) vs. batch vs. learn once</li>
                     <li><b>Reactivity</b> (how fast does <em>the response</em> have to be?
-                        <br>→ <u>prediction time</u>): e.g. in-app event / e-mailed report</li>
+                        <br>→ <u>prediction latency</u>): In-app event, e-mailed report,...</li>
                 </ul>
                 <li>Quantitative specifications</li>
                 <ol>
@@ -201,12 +201,13 @@
                 <li>Non-parallel vs. Parallel/Distributed (find some separability)
                     <ol>
                         <li><a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Stochastic_approximation ">Stochastic Approximation</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Category:Probabilistic_data_structures">Probabilistic data structures</a><br>(c.f. Probabilistic Programming)
-                        <li><a href="https://en.wikipedia.org/wiki/Metaheuristic#Parallel_metaheuristics ">meta-heuristics</a></li>
-                        <li>Split the cost function, and then optimize (e.g. <a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Augmented_Lagrangian_method#Alternating_direction_method_of_multipliers ">ADMM</a>)</li>
-                        <li>GPGPU</li>
+                        <li><a href="https://en.wikipedia.org/wiki/Category:Probabilistic_data_structures">Probabilistic data structures</a>
+                            <br>(c.f. Probabilistic Programming)
+                            <li><a href="https://en.wikipedia.org/wiki/Metaheuristic#Parallel_metaheuristics ">meta-heuristics</a></li>
+                            <li>Split the cost function, and then optimize (e.g. <a style="line-height: 1.42857;" href="https://en.wikipedia.org/wiki/Augmented_Lagrangian_method#Alternating_direction_method_of_multipliers ">ADMM</a>)</li>
+                            <li>GPGPU</li>
                     </ol>
-                </li>
+                    </li>
             </ol>
         </div>
         <div id="duality" class="step slide" data-x=12000 data-y=3000 data-z=-2000 data-rotate-y=180 data-scale=2>
@@ -485,32 +486,32 @@
             <h3 id="ExtractDateTime" align="center" style="line-height: 400px; ">Example: Extract Date &amp; Time by chrono fields</h3>
         </div>
         <div id="normalized_fields" class="step slide" data-x=22000 data-y=1000>
-            <li><u>Normalized fields:</u>
-                <ol>
-                    <li>Century (zero-based): e.g. 20 for 20XX</li>
-                    <li>Year in century: 00-99</li>
-                    <li>Month of year: 1-12</li>
-                    <li>Day of month: 1-31</li>
-                    <li>Hour of day: 00-23</li>
-                    <li>Minute of hour: 00-59</li>
-                    <li>Second of minute: 00-59</li>
-                    <li>Milli of second: 000-999</li>
-                </ol>
-            </li>
+            <h4>Normalized fields:</h4>
+            <ol>
+                <li>Century (zero-based): e.g. 20 for 20XX</li>
+                <li>Year in century: 00-99</li>
+                <li>Month of year: 1-12</li>
+                <li>Day of month: 1-31</li>
+                <li>Hour of day: 00-23</li>
+                <li>Minute of hour: 00-59</li>
+                <li>Second of minute: 00-59</li>
+                <li>Milli of second: 000-999</li>
+            </ol>
         </div>
         <div id="derived_fields" class="step slide" data-x=22000 data-y=2000>
-            <li><u>Derived informative fields:</u>
-                <br/>
-                <ol>
-                    <li>Season of year: S/F/W/S</li>
-                    <li>Week of year: 1-52</li>
-                    <li>Week of month: 1-5</li>
-                    <li>Day of year: 1-366</li>
-                    <li>Day of week: 1-7</li>
-                    <li>Is weekend? True/False</li>
-                    <li>Is daytime? True/False</li>
-                </ol>
-            </li>
+            <h4>Derived informative fields:</h4>
+            <ol>
+                <li>Season of year: S/F/W/S</li>
+                <li>Week of year: 1-52</li>
+                <li>Week of month: 1-5</li>
+                <li>Day of year: 1-366</li>
+                <li>Day of week: 1-7</li>
+                <li>Is weekend? True/False</li>
+                <li>Is daytime? True/False</li>
+            </ol>
+            <h4>Seasonality</h4>
+            Expect about 15% of metrics to have seasonality.
+             ~70% will have daily period, and another ~25% will have weekly period, leaving no more than 5% for any other periodicity.
         </div>
         <div id="feature_engineering" class="step slide" data-x=24000>
             <h2 id="FeatureEngineeringFeatureengineeringapproaches" align="center" style="line-height: 400px; ">Feature engineering approaches</h2>
@@ -537,7 +538,7 @@
                         </ol>
                         <li>Cluster Analysis</li>
                         <ol>
-                            <li>Input <em>k</em>: centroid or distribution based</li>
+                            <li>Input <em>k</em>: centroid (also spectral) or distribution based</li>
                             <li>Output <em>k</em>: hierarchical or density based</li>
                         </ol>
                     </ol>
