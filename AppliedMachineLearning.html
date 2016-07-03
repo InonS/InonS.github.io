@@ -65,7 +65,7 @@
             <ul>
                 <li>Workflow:</li>
                 <ol>
-                    <li>POC (domain, data, algo, example)</li>
+                    <li>POC (domain, data, algo, examples)</li>
                     <li>Escalation (algo, engineering) </li>
                 </ol>
                 <li>Data Wrangling:</li>
@@ -129,7 +129,8 @@
         </div>
         <div id="poc" class="step slide" data-x=8000>
             <h2 id="ProofOfConcept" align="center" style="text-align: center; vertical-align: middle ">Proof Of Concept</h2>
-            <img src="images/MVP-2.0.jpg" alt="https://www.anintegratedworld.com/minimum-viable-product-in-reality" />
+            <img src="images/MVP-2.0.jpg" alt="https://www.anintegratedworld.com/minimum-viable-product-in-reality" height="70%" />
+            <p><a href="https://en.wikipedia.org/wiki/Data_mining#Process">KDD process</a>:</p>
         </div>
         <div id="business_domain" class="step slide" data-x=8000 data-y=1000>
             <h3>Business domain</h3>
@@ -234,10 +235,13 @@
                 <li>Predictive power is sealed at learn-time vs. predict-time</li>
             </ol>
         </div>
-        <div id="algo_example" class="step slide" data-x=8000 data-y=4000>
+        <div id="algo_examples" class="step slide" data-x=8000 data-y=4000>
             <h3>Learning Algorithm Example</h3>
             <p>e.g. Supervised, parametric, generative, non-interacting, lightweight model, using an iterative algorithm:</p>
             <p><a href="https://en.wikipedia.org/wiki/Generalized_linear_model#Link_function ">GLMs</a> using Stochastic Gradient Descent.</p>
+            <br>
+            <p>e.g. Supervised, non-parametric, discriminative, interacting, heavyweight model, using a batch algorithm:</p>
+            <p><a href="http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html">Deep Neural Network using Monte Carlo tree search</a>.</p>
         </div>
         <div id="escalation" class="step slide" data-x=10000>
             <h2 id="Escalation" align="center" style="line-height: 400px; ">Escalation</h2>
@@ -289,24 +293,24 @@
         <div id="integration" class="step slide" data-x=14000 data-y=1000>
             <h3> Product integration</h3>
             <ol>
-                <li><b><u>Interface</u></b>: In-database, API, REST, dashboard, ...</l..;;i>
-                    <li><b><u>Data pipeline DAG</u></b>
-                        <ol>
-                            <li><b>Edges</b>:
-                                <ol>
-                                    <li><u>Interface</u>: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
-                                    </li>
-                                    <li><u>Implementation</u>: Functors (function reference plus state, e.g. Java method reference)</li>
-                                </ol>
-                            </li>
-                            <li><b>Vertices</b>:
-                                <ol>
-                                    <li><u>Spouts</u>: Data sources</li>
-                                    <li><u>Bolts</u>: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
+                <li><b><u>Interface</u></b>: In-database, API, REST, dashboard, ...</li>
+                <li><b><u>Architecture</u></b>: 3-tier warehouse, Lambda, ...</li>
+                <li><b><u>Data pipeline DAG</u></b>
+                    <ol>
+                        <li><b>Edges</b>:
+                            <ol>
+                                <li><u>Interface</u>: Monads (Single Abstract Method type, e.g. Java @FunctionalInterface)
+                                </li>
+                                <li><u>Implementation</u>: Functors (function reference plus state, e.g. Java method reference)</li>
+                            </ol>
+                        </li>
+                        <li><b>Vertices</b>:
+                            <ol>
+                                <li><u>Spouts</u>: Data sources</li>
+                                <li><u>Bolts</u>: Data pools along the pipeline (for resilience, auditing, debugging, etc.)</li>
+                            </ol>
+                        </li>
+                    </ol>
                 </li>
                 <li><b><u>Scalability</u></b>: Parallelization (e.g. submit micro-batches for prediction, rather than single events), etc.</li>
             </ol>
