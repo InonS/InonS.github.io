@@ -140,6 +140,7 @@
                     <br>See
                     <a href="https://youappi.atlassian.net/wiki/display/~Inon/Data+Driven+Value#DataDrivenValue-CounterFactualEvaluation ">Counter-Factual Evaluation</a>
                 </li>
+                <li>Set in place a (production) feedback mechanism</li>
                 <li>Timeliness</li>
                 <ul>
                     <li><b>Adaptivity</b> (how fast is <em>the world</em> changing?
@@ -150,11 +151,7 @@
                 <li>Quantitative specifications</li>
                 <ol>
                     <li>Minimally Viable Product (MVP) requirements → KPIs</li>
-                    <li>scoring &amp; test method</li>
-                    <ul>
-                        <li><a href="https://en.wikipedia.org/wiki/Confusion_matrix ">overall performance</a></li>
-                        <li>particular mission-critical properties</li>
-                    </ul>
+                    <li>scoring &amp; test method: <a href="https://en.wikipedia.org/wiki/Confusion_matrix ">overall performance</a>, particular mission-critical properties</li>
                 </ol>
             </ol>
         </div>
@@ -570,8 +567,10 @@
             <ol>
                 <li>Anamnesis</li>
                 <ol>
+                	<li>Last change in parameter values</li>
                     <li>Value of regularization function</li>
                     <li>Value of cost function</li>
+                	<li>Value of Kullback-Leibler divergence</li>
                     <li>Value of scoring function on training set</li>
                     <li>Value of scoring function on test set</li>
                 </ol>
@@ -580,8 +579,7 @@
                     <li>High variance (training error &lt;&lt; test error)</li>
                     <li>High bias (training error &gt;&gt; acceptable test error)</li>
                     <li>Optimization algorithm (cost has not converged)</li>
-                    <li>Optimization objective is not representative (goal &gt;&gt; score)</li>
-                    * goal function is negative cost function.
+                    <li>Optimization objective is not representative<br>(goal &gt;&gt; score; goal function is negative cost function)</li>
                 </ol>
             </ol>
         </div>
@@ -595,7 +593,7 @@
                 </ul>
                 <li>High bias</li>
                 <ul>
-                    <li>Include more features</li>
+                    <li>Include more features (which were initially excluded)</li>
                     <li>Get data with new features</li>
                 </ul>
                 <li>Optimization algorithm does not converge</li>
@@ -603,12 +601,12 @@
                     <li>Run more iterations</li>
                     <li>Change initial parameter values</li>
                     <li>Switch to adaptive step size / learning rate</li>
-                    <li>Change optimization algorithm (check <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/6plot.htm ">6-Plot</a>)</li>
+                    <li>Switch optimization algorithm (check <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/6plot.htm ">6-Plot</a>)</li>
                 </ul>
                 <li>Optimization objective is not representative</li>
                 <ul>
                     <li>Change meta-parameters (regularization / margin)</li>
-                    <li>Change ML model</li>
+                    <li>Switch ML model</li>
                 </ul>
             </ol>
         </div>
@@ -638,7 +636,7 @@
         <div id="impressjs" class="step slide" data-x=28000 data-y=2000>
             <h3>impress.js</h3>
             <ul>
-                <li>Use the source!
+                <li>Use the source, Luke!
                     <ul>
                         <li><a href="view-source:http://impress.github.io/impress.js/ ">impress.js</a></li>
                         <li><a href="https://raw.githubusercontent.com/impress/impress.js/master/css/impress-demo.css ">demo stylesheet (CSS)</a></li>
