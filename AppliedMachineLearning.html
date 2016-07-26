@@ -34,12 +34,12 @@
         <div id="intro_start" class="step slide" data-x=0>
             <p>How do I approach a data science task? Where do I start?</p>
         </div>
-        <div id="intro_planning" class="step slide ">
+        <div id="intro_planning" class="step slide">
             <p>How do I approach a data science task? Where do I start?</p>
             <p>What is needed of me? How do I measure success? What do I need?</p>
             <p>How do I structure my workplan?</p>
         </div>
-        <div id="intro_wrangling" class="step slide ">
+        <div id="intro_wrangling" class="step slide">
             <p>How do I approach a data science task? Where do I start?</p>
             <p>What is needed of me? How do I measure success? What do I need?</p>
             <p>How do I structure my workplan?</p>
@@ -47,7 +47,7 @@
             <p>What data-feature transformations do I use?</p>
             <p>How do I choose my learning model and optimization algorithm?</p>
         </div>
-        <div id="intro_engineering" class="step slide ">
+        <div id="intro_engineering" class="step slide">
             <p>How do I approach a data science task? Where do I start?</p>
             <p>What is needed of me? How do I measure success? What do I need?</p>
             <p>How do I structure my workplan?</p>
@@ -85,10 +85,10 @@
             </ul>
         </div>
         <div id="workflow" class="step slide" data-x=4000>
-            <h2 id="Workflowforaparticularepicandfeature" align="center" style="line-height: 400px; ">Workflow</h2>
+            <h2 id="Workflowforaparticularepicandfeature" align="center" style="line-height: 400px;">Workflow</h2>
         </div>
         <div id="sprint" class="step slide" data-x=6000>
-            <h3 id="Sprint ">Sprint</h3>
+            <h3 id="Sprint">Sprint</h3>
             <table cellpadding="18px ">
                 <tbody style="font-size: 18px; ">
                     <tr>
@@ -128,7 +128,7 @@
             </table>
         </div>
         <div id="poc" class="step slide" data-x=8000>
-            <h2 id="ProofOfConcept" align="center" style="text-align: center; vertical-align: middle ">Proof Of Concept</h2>
+            <h2 id="ProofOfConcept" align="center" style="text-align: center; vertical-align: middle">Proof Of Concept</h2>
             <img src="images/MVP-2.0.jpg" alt="https://www.anintegratedworld.com/minimum-viable-product-in-reality" height="70%" />
             <p><a href="https://en.wikipedia.org/wiki/Data_mining#Process">KDD process</a>:</p>
         </div>
@@ -136,7 +136,7 @@
             <h3>Business domain</h3>
             <ol>
                 <li>Domain model</li>
-                <li>Hypothesis: Value proposition
+                <li>Ideation/Hypothesis: Value proposition
                     <br>See
                     <a href="https://youappi.atlassian.net/wiki/display/~Inon/Data+Driven+Value#DataDrivenValue-CounterFactualEvaluation ">Counter-Factual Evaluation</a>
                 </li>
@@ -159,10 +159,11 @@
             <h3><a href="#data_wrangling ">Data domain</a></h3>
             <ol>
                 <li>Identification of (possibly) relevant data sources</li>
-                <li>Fusion of raw data-sources (e.g. aggregation)</li>
+                <li>Data munging (create data pool by fusion of raw data-sources, e.g. aggregation)</li>
                 <li><a href="http://www.itl.nist.gov/div898/handbook/ ">Data model</a></li>
                 <li>Data visualization and exploration</li>
-                <li>Data cleansing</li>
+                <li>Data cleansing/validation</li>
+                <li>Data transformation (e.g. normalization)</li>
             </ol>
         </div>
         <div id="algo_domain" class="step slide" data-x=8000 data-y=3000>
@@ -179,6 +180,7 @@
             <ol>
                 <li>Supervised vs. unsupervised (i.e. quantity and quality of labeled data)</li>
                 <li>Univariate vs. multivariate (goal or cost is function of one / many response variables)</li>
+                <li>Regression vs. Binary Classification vs. Multi-label Classification vs. Clustering (identify supervised learning task by label, then provide appropriate scoring metrics. e.g. categorical cross-entropy or multi-class log loss for multi-lable classification)</li>
                 <li>Parametric vs. non-parametric</li>
                 <li>Discriminative (predictive) vs. Generative (causal)</li>
                 <li>Accommodate or ignore feature interactions</li>
@@ -211,6 +213,7 @@
         <div id="duality" class="step slide" data-x=12000 data-y=3000 data-z=-2000 data-rotate-y=180 data-scale=2>
             <h4>Duality</h4> Consider solving the <a href="https://en.wikipedia.org/wiki/Duality_(optimization) ">dual problem</a>
             <ol>
+                <li>Apply Fourier / Laplace transform for non-stationary joint distributions</li>
                 <li>Dual SVM problem</li>
                 <li>Matrix Factorization using ALS (particularly where the inverse problem is also of interest, such as in Recommender Systems)</li>
                 <li>Projection to Latent Structures (PLS)</li>
@@ -241,7 +244,7 @@
             <p><a href="http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html">Deep Neural Network using Monte Carlo tree search</a>.</p>
         </div>
         <div id="escalation" class="step slide" data-x=10000>
-            <h2 id="Escalation" align="center" style="line-height: 400px; ">Escalation</h2>
+            <h2 id="Escalation" align="center" style="line-height: 400px;">Escalation</h2>
         </div>
         <div id="escalation_algorithm" class="step slide" data-x=12000>
             <h3><a href="http://www.scholarpedia.org/article/Encyclopedia:Computational_intelligence ">Algorithm domain</a></h3>
@@ -258,6 +261,7 @@
                             <li>Deterministic (jackknifing)</li>
                             <li>Stochastic (bagging)</li>
                         </ol>
+                        <li><a href="http://mlwave.com/kaggle-ensembling-guide/">Stacked generalization / blending</a></li>
                         <li>Boosting</li>
                         <ul>
                             <li>AdaBoost</li>
@@ -312,7 +316,7 @@
                 <li><b><u>Scalability</u></b>: Parallelization (e.g. submit micro-batches for prediction, rather than single events), etc.</li>
             </ol>
         </div>
-        <div id="devops" class="step slide" data-x=14000 data-y=2000 style="line-height: 48px ">
+        <div id="devops" class="step slide" data-x=14000 data-y=2000 style="line-height: 48px">
             <ul>
                 <li><b>Test plan</b></li>
                 <li><b>Documentation</b></li>
@@ -345,10 +349,10 @@
             </ol>
         </div>
         <div id="data_wrangling" class="step slide" data-x=16000>
-            <h2 id="DataWrangling" align="center" style="line-height: 400px; ">Data Wrangling</h2>
+            <h2 id="DataWrangling" align="center" style="line-height: 400px;">Data Wrangling</h2>
         </div>
         <div id="objectives" class="step slide" data-x=18000>
-            <h3 style="text-align: justify;" id="Objectives ">Objectives</h3>
+            <h3 style="text-align: justify;" id="Objectives">Objectives</h3>
             <ul style="margin-left: 2.0em; ">
                 <li>No <em>missing</em> values (null, undefined, N/A, ...)</li>
                 <li>No <em>invalid</em> values (NaN, inf, ' ', ...)</li>
@@ -360,7 +364,7 @@
             <span style="color: red ">Caveat!</span> <b>Rational design</b>: Every data processing decision will probably affect the model's predictive performance.
         </div>
         <div id="eda" class="step slide" data-x=20000>
-            <h3 style="text-align: justify;" id="eda ">Exploratory Data Analysis</h3>
+            <h3 style="text-align: justify;" id="eda">Exploratory Data Analysis</h3>
             <ol>
                 <li>Overview data schema</li>
                 <ol>
@@ -416,7 +420,7 @@
                 <br/>
                 <ol>
                     <li><em>Hashing trick</em> (i.e. feature vectorization)</li>
-                    <li>e.g. spark.ml.feature.StringIndexer, Tokenizer, HashingTF, etc.</li>
+                    <li> Text-feature extraction: OneHotEncoder, td-idf (e.g. in both scikit-learn and spark), StringIndexer, Tokenizer, word2vec (e.g. in spark.ml), etc.</li>
                 </ol>
             </li>
         </div>
@@ -429,7 +433,7 @@
                         <li>Long-tail effect on location statistic: average vs. median.</li>
                         <li>Including a variability statistic (e.g. range, variance)</li>
                         <li>Confidence intervals using bootstrapping</li>
-                        <li>Binning of variables whose dynamic-range is large</li>
+                        <li>Binning of variables whose dynamic-range is large. Visualize using histograms to select the most appropriate bin intervals.</li>
                     </ol>
                 </li>
                 <li><u>Mathematical transformations</u> to attain zero mean and uniform (&#8733; unit) variance
@@ -465,26 +469,38 @@
                 <li>Add <em>compound features</em>, as needed. e.g. the <em>kernel trick</em></li>
             </ol>
         </div>
-        <div id="randomization" class="step slide" data-x=20000 data-y=7000>
+        <div id="cross_validation" class="step slide" data-x=20000 data-y=7000>
+            <h3>Cross-Validation</h3>
+            <ul>
+                <li>Data contamination / leakage: Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
+                <li>For uneven data sets, employ stratified sampling (particularly for classification).</li>
+            </ul>
             <h3>Randomization</h3>
             <ul>
                 <li><u>Rare event sampling</u>: Sample a comparable number of non-interesting events as the interesting ones, and give the former a proportional weight when fitting. (Proportional to their original fraction in the sample set) </li>
                 <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
             </ul>
         </div>
-        <div id="data_leakage" class="step slide" data-x=20000 data-y=8000>
-            <h3>Data contamination / leakage</h3>
-            <ol>
-                <li>Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
-            </ol>
-        </div>
-        <div id="data_tips" class="step slide" data-x=20000 data-y=9000>
+        <div id="data_pipeline" class="step slide" data-x=20000 data-y=8000>
+            <h3>Data Pipeline</h3>
             <ul>
                 <li>The various cleansing and compounding stages can be programmed to execute sequentially, as part of an, e.g. spark.ml.Pipeline, and followed by 'train/fit' and 'test/score' phases.</li>
+                <li>Feature <a href="http://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_extraction">extraction</a>, <a href="http://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing">preprocessing (including normalization)</a>, and <a href="http://scikit-learn.org/stable/modules/classes.html#module-sklearn.feature_selection">selection</a> (including dimensionality reduction techniques such as <a href="http://scikit-learn.org/stable/modules/classes.html#module-sklearn.decomposition">matrix factorization/decomposition</a>) transformations in scikit-learn or in <a href="http://spark.apache.org/docs/latest/ml-features.html">spark.ml</a></li>
+                <li>Concatenate features from different transformer stages using feature stacking (e.g. in <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html">numpy</a> or <a href="http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.FeatureUnion.html#sklearn.pipeline.FeatureUnion">scikit-learn</a>)</li>
+                <li>Rather than using one monolithic model, it can be more robust to aggregate predictions from multiple light-weight models, each using only a few features (for ensemble methods also small number of estimators).</li>
             </ul>
         </div>
+        <div id="process_engineering" class="step slide" data-x=20000 data-y=9000>
+            <h3>Process engineering</h3>
+            <ol>
+                <li><a href="http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline">Scikit-learn Pipeline</a> or <a href="http://spark.apache.org/docs/latest/ml-guide.html#example-pipeline">spark.ml.Pipeline</a> for conveniently transferring each extractor, transformer, and evaluator from the training phase for use in the testing/validation and prediction phases.</li>
+                <li>Model selection and ensemble learning</li>
+                <li>Use <a href="http://scikit-learn.org/stable/modules/classes.html#module-sklearn.grid_search">grid_search</a> to scan hyper-parameters within a reasonable range (probably never exceed two orders of magnitude from standard parameter value).</li>
+                <li>Multi-level models: See <a href="#/metalearning">ensemble/meta- learning</a></li>
+            </ol>
+        </div>
         <div id="extract_chrono" class="step slide" data-x=22000>
-            <h3 id="ExtractDateTime" align="center" style="line-height: 400px; ">Example: Extract Date &amp; Time by chrono fields</h3>
+            <h3 id="ExtractDateTime " align="center" style="line-height: 400px;">Example: Extract Date &amp; Time by chrono fields</h3>
         </div>
         <div id="normalized_fields" class="step slide" data-x=22000 data-y=1000>
             <h4>Normalized fields:</h4>
@@ -513,7 +529,7 @@
             <h4>Seasonality</h4> Expect about 15% of metrics to have seasonality. ~70% will have daily period, and another ~25% will have weekly period, leaving no more than 5% for any other periodicity.
         </div>
         <div id="feature_engineering" class="step slide" data-x=24000>
-            <h2 id="FeatureEngineeringFeatureengineeringapproaches" align="center" style="line-height: 400px; ">Feature engineering approaches</h2>
+            <h2 id="FeatureEngineeringFeatureengineeringapproaches " align="center " style="line-height: 400px;">Feature engineering approaches</h2>
         </div>
         <div id="manual-features" class="step slide" data-x=24000 data-y=1000>
             <h3>Manual Feature Engineering</h3>
@@ -561,16 +577,22 @@
                     </ol>
                 </li>
             </ol>
+            <p>Deep learning image processing huristic:</p>
+            <ol>
+                <li>First layer: Pixel-intensity features</li>
+                <li>Second layer: Multiple-pixel features (segmentation, etc.)</li>
+                <li>Subsequent layers: More complex features/tasks (object recognition, etc.)</li>
+            </ol>
         </div>
         <div id="diagnostics_and_debugging" class="step slide" data-x=26000>
-            <h2 id="mldebugDiagnostics&amp;debugging ">Diagnostics &amp; debugging</h2>
+            <h2 id="mldebugDiagnostics&amp;debugging">Diagnostics &amp; debugging</h2>
             <ol>
                 <li>Anamnesis</li>
                 <ol>
-                	<li>Last change in parameter values</li>
+                    <li>Last change in parameter values</li>
                     <li>Value of regularization function</li>
                     <li>Value of cost function</li>
-                	<li>Value of Kullback-Leibler divergence</li>
+                    <li>Value of Kullback-Leibler divergence</li>
                     <li>Value of scoring function on training set</li>
                     <li>Value of scoring function on test set</li>
                 </ol>
@@ -579,7 +601,8 @@
                     <li>High variance (training error &lt;&lt; test error)</li>
                     <li>High bias (training error &gt;&gt; acceptable test error)</li>
                     <li>Optimization algorithm (cost has not converged)</li>
-                    <li>Optimization objective is not representative<br>(goal &gt;&gt; score; goal function is negative cost function)</li>
+                    <li>Optimization objective is not representative
+                        <br>(goal &gt;&gt; score; goal function is negative cost function)</li>
                 </ol>
             </ol>
         </div>
@@ -619,10 +642,10 @@
             </ul>
         </div>
         <div id="communicating_results" class="step slide" data-x=28000>
-            <h2 id="Communicatingresults" align="center" style="line-height: 400px; ">Communicating results</h2>
+            <h2 id="Communicatingresults " align="center " style="line-height: 400px;">Communicating results</h2>
         </div>
         <div id="presentation_animations" class="step slide" data-x=28000 data-y=1000>
-            <h2 id="PresentationAnimationsPresentationanimations ">Presentation animations</h2>
+            <h2 id="PresentationAnimationsPresentationanimations">Presentation animations</h2>
             <ol>
                 <li>overview &amp; each top-level step as a separate module</li>
                 <li>zoom in on each module, while keeping overall perspective</li>
@@ -651,13 +674,13 @@
                 </li>
             </ul>
         </div>
-        <div id="questions" class="step slide" data-x=30000 align="center" style="line-height: 320px; ">
+        <div id="questions " class="step slide" data-x=30000 align="center " style="line-height: 320px;">
             <big>Questions?</big>
             <br>
             <a href="https://il.linkedin.com/in/inonsharony ">Inon Sharony</a>,
             <time>June 2016</time>
         </div>
-        <div id="overview" class="step" data-x=15000 data-scale=20>
+        <div id="overview " class="step" data-x=15000 data-scale=20>
         </div>
     </div>
     <script src="js/impress.js "></script>
