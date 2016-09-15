@@ -375,6 +375,7 @@
                 <li><a href="http://www.itl.nist.gov/div898/handbook/eda/section3/eda34.htm ">Data visualization</a></li>
                 <ol>
                     <li>Use a notebook (Jupyter, Zeppelin, etc.)</li>
+                    <li>Boxplot (univariate or bivariate, i.e. Bagplot)</li>
                     <li>Test assumptions of normality and homoscedasticity using <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/4plot.htm ">4-Plot</a></li>
                 </ol>
             </ol>
@@ -402,7 +403,7 @@
         <div id="data_cleansing" class="step slide" data-x=20000 data-y=2000>
             <h3>Data cleansing</h3> Cleanse features with missing, invalid, innumerable, or un-normalized values:
             <ol>
-                <li><u>Missing</u>: Drop (<em>filter</em>) entire <i>record</i> or <em>imputate</em> (fill) <i>value<i/>?
+                <li><u>Missing</u>: Drop (<em>filter</em>) entire <i>record</i> or <em>imputate</em> (fill) <i>value</i>?
                     <ol>
                         <li>If filling in, what with? zero-order = most probable (mode), more complex logic...</li>
                         <li><u>Selection bias</u>: Find ways to compensate for data which was not measured, in order to take the base rate into account.</li>
@@ -424,27 +425,26 @@
                 </ol>
             </li>
         </div>
-        <div id="value_normalization" class="step slide" data-x=20000 data-y=4000>
-            <h3>Value Normalization</h3>
+        <div id="outliers" class="step slide" data-x=20000 data-y=4000>
+            <h3>Tolerance of Outliers</h3>
             <ol>
-                <li><u>Tolerance of outliers</u>
-                    <ol>
-                        <li><em>Censoring</em> (filtering) or <em>imputation</em> (value truncation) of outliers</li>
-                        <li>Long-tail effect on location statistic: average vs. median.</li>
-                        <li>Including a variability statistic (e.g. range, variance)</li>
-                        <li>Confidence intervals using bootstrapping</li>
-                        <li>Binning of variables whose dynamic-range is large. Visualize using histograms to select the most appropriate bin intervals.</li>
-                    </ol>
-                </li>
-                <li><u>Mathematical transformations</u> to attain zero mean and uniform (&#8733; unit) variance
-                    <ol>
-                        <li>Logarithmic transformations (log, semi-log, log-log).</li>
-                        <li>Box–Cox (Power) Transformation</li>
-                    </ol>
-                </li>
+                <li><em>Censoring</em> (filtering) or <em>imputation</em> (value truncation, e.g. winsorization) of outliers</li>
+                <li>Long-tail effect on location statistic: average vs. median.</li>
+                <li>Including a variability statistic (e.g. range, variance)</li>
+                <li>Confidence intervals using bootstrapping</li>
+                <li>Binning of variables whose dynamic-range is large. Visualize using histograms to select the most appropriate bin intervals.</li>
+                <li>Robust Statistical Methods (e.g. Robust Linear Regression, from the Theil-Sen Estimator to Redescending M-estimators)</li>
             </ol>
         </div>
-        <div id="db_normalization" class="step slide" data-x=20000 data-y=5000>
+        <div id="transformations" class="step slide" data-x=20000 data-y=5000>
+            <h3>Value Normalization by Mathematical Transformations</h3>
+            To attain zero mean and uniform (&#8733; unit) variance:
+            <ol>
+                <li>Logarithmic transformations (log, semi-log, log-log).</li>
+                <li>Box–Cox (Power) Transformation</li>
+            </ol>
+        </div>
+        <div id="db_normalization" class="step slide" data-x=20000 data-y=6000>
             <h3>DB Normalization</h3>
             <ol>
                 <li>Decomposition of composite data into multiple, primitive typed fields</li>
@@ -452,7 +452,7 @@
                 <li><u>Propositionalization</u>: RDB Feature Synthesis (e.g. Deep Feature Synthesis)</li>
             </ol>
         </div>
-        <div id="feature_selection" class="step slide" data-x=20000 data-y=6000>
+        <div id="feature_selection" class="step slide" data-x=20000 data-y=7000>
             <h3>Feature selection</h3>
             <ol>
                 <li>Consider <em>removing noisy features</em> (e.g. mostly missing or unreliable for any other reason), to attempt more concise models first.</li>
@@ -469,7 +469,7 @@
                 <li>Add <em>compound features</em>, as needed. e.g. the <em>kernel trick</em></li>
             </ol>
         </div>
-        <div id="cross_validation" class="step slide" data-x=20000 data-y=7000>
+        <div id="cross_validation" class="step slide" data-x=20000 data-y=8000>
             <h3>Cross-Validation</h3>
             <ul>
                 <li>Data contamination / leakage: Take care that data present in the test set is not reflected directly or indirectly in the training set.</li>
@@ -481,7 +481,7 @@
                 <li><u>Data splitting</u>: The test set should be 20%-30% of the samples, and the rest can be trained on. See also re-sampling.</li>
             </ul>
         </div>
-        <div id="data_pipeline" class="step slide" data-x=20000 data-y=8000>
+        <div id="data_pipeline" class="step slide" data-x=20000 data-y=9000>
             <h3>Data Pipeline</h3>
             <ul>
                 <li>The various cleansing and compounding stages can be programmed to execute sequentially, as part of an, e.g. spark.ml.Pipeline, and followed by 'train/fit' and 'test/score' phases.</li>
@@ -490,7 +490,7 @@
                 <li>Rather than using one monolithic model, it can be more robust to aggregate predictions from multiple light-weight models, each using only a few features (for ensemble methods also small number of estimators).</li>
             </ul>
         </div>
-        <div id="process_engineering" class="step slide" data-x=20000 data-y=9000>
+        <div id="process_engineering" class="step slide" data-x=20000 data-y=10000>
             <h3>Process engineering</h3>
             <ol>
                 <li><a href="http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline">Scikit-learn Pipeline</a> or <a href="http://spark.apache.org/docs/latest/ml-guide.html#example-pipeline">spark.ml.Pipeline</a> for conveniently transferring each extractor, transformer, and evaluator from the training phase for use in the testing/validation and prediction phases.</li>
