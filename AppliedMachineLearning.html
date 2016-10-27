@@ -144,7 +144,7 @@
                 <li>Timeliness</li>
                 <ul>
                     <li><b>Adaptivity</b> (how fast is <em>the world</em> changing?
-                        <br>→ <u>learning rate</u>): Event (Reinforcement Learning) vs. batch vs. learn once</li>
+                        <br>→ <u>learning rate</u> &amp; <u>validation technique</u>): Event (Reinforcement Learning) vs. batch vs. learn once</li>
                     <li><b>Reactivity</b> (how fast does <em>the response</em> have to be?
                         <br>→ <u>prediction latency</u>): In-app event, e-mailed report,...</li>
                 </ul>
@@ -285,6 +285,12 @@
                 <li>Confusion Matrix</li>
                 <li>AUC</li>
                 <li>A/B user testing: &alpha;, &beta;, production</li>
+            </ol>
+            <h3>Learning Problem => Validation Method</h3>
+            <ol>
+                <li>Batch Learning: The learning process has no effect on the subject learned => can validated a particular model.</li>
+                <li>On-line Reinforcement Learning: Every time we take an action, the environment may react => only A/B testing.</li>
+                <quote>"You could not step twice into the same river."</quote><br>-- Heraclitus
             </ol>
         </div>
         <div id="software" class="step slide" data-x=14000>
@@ -437,8 +443,7 @@
             </ol>
         </div>
         <div id="transformations" class="step slide" data-x=20000 data-y=5000>
-            <h3>Value Normalization by Mathematical Transformations</h3>
-            To attain zero mean and uniform (&#8733; unit) variance:
+            <h3>Value Normalization by Mathematical Transformations</h3> To attain zero mean and uniform (&#8733; unit) variance:
             <ol>
                 <li>Logarithmic transformations (log, semi-log, log-log).</li>
                 <li>Box–Cox (Power) Transformation</li>
