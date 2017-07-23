@@ -290,7 +290,8 @@
             <ol>
                 <li>Batch Learning: The learning process has no effect on the subject learned => can validated a particular model.</li>
                 <li>On-line Reinforcement Learning: Every time we take an action, the environment may react => only A/B testing.</li>
-                <quote>"You could not step twice into the same river."</quote><br>-- Heraclitus
+                <quote>"You could not step twice into the same river."</quote>
+                <br>-- Heraclitus
             </ol>
         </div>
         <div id="software" class="step slide" data-x=14000>
@@ -603,9 +604,9 @@
                 </ol>
                 <li>Diagnosis</li>
                 <ol>
-                    <li>High variance (training error &lt;&lt; test error)</li>
-                    <li>High bias (training error &gt;&gt; acceptable test error)</li>
                     <li>Optimization algorithm (cost has not converged)</li>
+                    <li>High bias (training error &gt;&gt; acceptable test error)</li>
+                    <li>High variance (training error &lt;&lt; test error)</li>
                     <li>Optimization objective is not representative
                         <br>(goal &gt;&gt; score; goal function is negative cost function)</li>
                 </ol>
@@ -614,22 +615,22 @@
         <div id="resolution" class="step slide" data-x=26000 data-y=1000>
             <h4>Prescription &#8478;</h4>
             <ol>
-                <li>High variance</li>
-                <ul>
-                    <li>Get more training samples</li>
-                    <li>Exclude more features</li>
-                </ul>
-                <li>High bias</li>
-                <ul>
-                    <li>Include more features (which were initially excluded)</li>
-                    <li>Get data with new features</li>
-                </ul>
                 <li>Optimization algorithm does not converge</li>
                 <ul>
                     <li>Run more iterations</li>
                     <li>Change initial parameter values</li>
                     <li>Switch to adaptive step size / learning rate</li>
                     <li>Switch optimization algorithm (check <a href="http://www.itl.nist.gov/div898/handbook/eda/section3/6plot.htm ">6-Plot</a>)</li>
+                </ul>
+                <li>High bias</li>
+                <ul>
+                    <li>Include more features (which were initially excluded)</li>
+                    <li>Get/generate new features</li>
+                </ul>
+                <li>High variance</li>
+                <ul>
+                    <li>Get more training samples</li>
+                    <li>Exclude more features</li>
                 </ul>
                 <li>Optimization objective is not representative</li>
                 <ul>
